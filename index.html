@@ -1,0 +1,3124 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RP Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rp-color-blue-25: #EBF3FF;
+      --rp-color-blue-50: #E0EDFF;
+      --rp-color-blue-100: #B2D1FF;
+      --rp-color-blue-200: #99C1FF;
+      --rp-color-blue-300: #66A3FF;
+      --rp-color-blue-400: #4D94FF;
+      --rp-color-blue-500: #0066FF;
+      --rp-color-blue-600: #0056D6;
+      --rp-color-blue-700: #0048B2;
+      --rp-color-blue-800: #003380;
+      --rp-color-blue-900: #00255C;
+      --rp-color-blue-950: #00193D;
+      --rp-color-darkblue-25: #F6F7F8;
+      --rp-color-darkblue-50: #EEF0F2;
+      --rp-color-darkblue-100: #B9C0CA;
+      --rp-color-darkblue-200: #97A1B1;
+      --rp-color-darkblue-300: #68768D;
+      --rp-color-darkblue-400: #4A5C77;
+      --rp-color-darkblue-500: #1D3355;
+      --rp-color-darkblue-600: #1A2E4D;
+      --rp-color-darkblue-700: #15243C;
+      --rp-color-darkblue-800: #101C2F;
+      --rp-color-darkblue-900: #0C1524;
+      --rp-color-darkblue-950: #060B13;
+      --rp-color-gray-25: #FDFDFD;
+      --rp-color-gray-50: #FAFAFA;
+      --rp-color-gray-100: #F5F5F5;
+      --rp-color-gray-200: #E9EAEB;
+      --rp-color-gray-300: #D5D7DA;
+      --rp-color-gray-400: #A4A7AE;
+      --rp-color-gray-500: #717680;
+      --rp-color-gray-600: #535862;
+      --rp-color-gray-700: #414651;
+      --rp-color-gray-800: #252B37;
+      --rp-color-gray-900: #181D27;
+      --rp-color-gray-950: #0A0D12;
+      --rp-color-success-25: #F6FEF9;
+      --rp-color-success-50: #ECFDF3;
+      --rp-color-success-500: #17B26A;
+      --rp-color-success-700: #067647;
+      --rp-color-warning-25: #FFFBF5;
+      --rp-color-warning-50: #FEF4E6;
+      --rp-color-warning-500: #F79009;
+      --rp-color-warning-700: #B54708;
+      --rp-color-error-25: #FFFBFA;
+      --rp-color-error-50: #FEF3F2;
+      --rp-color-error-500: #F04438;
+      --rp-color-error-600: #ED2012;
+      --rp-color-error-700: #D51D10;
+      --rp-color-green-travel-500: #60BA46;
+      --rp-color-white: #FFFFFF;
+      --bg: var(--rp-color-gray-50);
+      --surface: var(--rp-color-white);
+      --surface-soft: var(--rp-color-gray-50);
+      --ink: var(--rp-color-darkblue-800);
+      --muted: var(--rp-color-gray-500);
+      --line: var(--rp-color-gray-200);
+      --brand: var(--rp-color-blue-500);
+      --brand-dark: var(--rp-color-darkblue-500);
+      --success: var(--rp-color-success-500);
+      --warning: var(--rp-color-warning-500);
+      --error: var(--rp-color-error-500);
+      --radius: 8px;
+      --shadow: 0 8px 24px color-mix(in srgb, var(--rp-color-darkblue-800) 8%, transparent);
+      --nav-bg: var(--rp-color-darkblue-900);
+      --nav-text: var(--rp-color-darkblue-100);
+      --nav-muted: var(--rp-color-darkblue-300);
+      --nav-hover: var(--rp-color-darkblue-700);
+      --nav-active: var(--brand);
+      --on-brand: var(--rp-color-white);
+      --brand-subtle: var(--rp-color-blue-25);
+      --brand-text: var(--rp-color-blue-700);
+      --frame-gap: 8px;
+      --frame-gap-top: 6px;
+      --canvas-radius: 20px;
+      --font: Inter, "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
+      --text-xs: 12px;
+      --text-xs-lh: 20px;
+      --text-sm: 14px;
+      --text-sm-lh: 20px;
+      --text-md: 16px;
+      --text-md-lh: 24px;
+      --text-lg: 20px;
+      --text-lg-lh: 28px;
+      --text-title: 24px;
+      --text-title-lh: 32px;
+      --weight-regular: 400;
+      --weight-ui: 500;
+      --weight-title: 640;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      font-optical-sizing: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      background: var(--nav-bg);
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-regular);
+      line-height: var(--text-sm-lh);
+      letter-spacing: -0.011em;
+      font-feature-settings: "cv11", "ss01", "calt" 1;
+      color: var(--ink);
+      background: var(--nav-bg);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .shell {
+      display: grid;
+      grid-template-columns: 232px minmax(0, 1fr);
+      column-gap: var(--frame-gap);
+      min-height: 100vh;
+      background: var(--nav-bg);
+      transition: grid-template-columns .2s ease;
+    }
+
+    .shell.is-nav-collapsed {
+      grid-template-columns: 64px minmax(0, 1fr);
+    }
+
+    .canvas {
+      display: grid;
+      grid-template-columns: 236px minmax(0, 1fr);
+      min-height: calc(100vh - var(--frame-gap-top));
+      margin-top: var(--frame-gap-top);
+      background: var(--surface);
+      border-radius: var(--canvas-radius) 0 0 0;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      height: 100vh;
+      padding: 14px 10px 12px;
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      overflow: visible;
+    }
+
+    .nav-collapse {
+      position: absolute;
+      top: 22px;
+      right: -14px;
+      z-index: 8;
+      display: grid;
+      place-items: center;
+      width: 28px;
+      min-width: 28px;
+      height: 28px;
+      min-height: 28px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      color: var(--on-brand);
+      background: transparent;
+      opacity: 0;
+      cursor: pointer;
+      transition: opacity .15s ease, background .15s ease, box-shadow .15s ease;
+    }
+
+    .sidebar:hover .nav-collapse,
+    .nav-collapse:focus-visible {
+      opacity: 1;
+      background: var(--rp-color-darkblue-800);
+      box-shadow: 0 2px 8px color-mix(in srgb, var(--rp-color-darkblue-950) 45%, transparent);
+    }
+
+    .nav-collapse:hover,
+    .nav-collapse:focus-visible {
+      opacity: 1;
+      background: var(--rp-color-darkblue-700);
+    }
+
+    .nav-collapse svg {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .shell.is-nav-collapsed .nav-collapse svg { transform: rotate(180deg); }
+
+    .shell.is-nav-collapsed .sidebar {
+      align-items: center;
+      padding: 8px 6px;
+    }
+
+    .shell.is-nav-collapsed .brand {
+      justify-content: center;
+      padding: 0 0 8px;
+    }
+
+    .shell.is-nav-collapsed .brand h1,
+    .shell.is-nav-collapsed .workspace,
+    .shell.is-nav-collapsed .nav-l1 > span:last-child,
+    .shell.is-nav-collapsed .sidebar-foot { display: none; }
+
+    .shell.is-nav-collapsed .nav-group {
+      display: block;
+      width: 20px;
+      height: 1px;
+      margin: 10px auto 8px;
+      padding: 0;
+      overflow: hidden;
+      font-size: 0;
+      line-height: 0;
+      color: transparent;
+      background: color-mix(in srgb, var(--rp-color-darkblue-300) 28%, transparent);
+    }
+
+    .shell.is-nav-collapsed .nav-group:first-child {
+      height: 0;
+      margin: 0;
+      background: transparent;
+    }
+
+    .shell.is-nav-collapsed .nav {
+      width: 100%;
+      gap: 2px;
+      align-content: start;
+      justify-items: center;
+    }
+
+    .shell.is-nav-collapsed .nav a.nav-l1 {
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      min-height: 36px;
+      padding: 0;
+      border-radius: 8px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 4px 8px 12px;
+    }
+
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      color: var(--on-brand);
+      background: var(--brand);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .brand h1 {
+      margin: 0;
+      color: var(--on-brand);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .brand p { display: none; }
+
+    .workspace {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      margin: 0 0 14px;
+      padding: 8px 10px;
+      border: 1px solid var(--rp-color-darkblue-600);
+      border-radius: 8px;
+      color: var(--on-brand);
+      background: transparent;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    .workspace-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+    }
+
+    .nav {
+      display: grid;
+      gap: 2px;
+      align-content: start;
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .nav-group {
+      margin: 16px 8px 6px;
+      color: var(--nav-muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
+    .nav-group:first-child { margin-top: 2px; }
+
+    .nav a.nav-l1 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      color: var(--nav-text);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-ui);
+      line-height: var(--text-sm-lh);
+    }
+
+    .nav a.nav-l1:hover { background: var(--nav-hover); color: var(--on-brand); }
+
+    .nav a.nav-l1.is-current {
+      color: var(--on-brand);
+      background: var(--nav-active);
+      font-weight: var(--weight-ui);
+    }
+
+    .nav-ico {
+      display: grid;
+      place-items: center;
+      width: 16px;
+      height: 16px;
+      opacity: .9;
+    }
+
+    .nav-ico svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sidebar-foot {
+      margin-top: auto;
+      padding: 12px 8px 4px;
+      color: var(--nav-muted);
+      font-size: 11px;
+    }
+
+    .subnav {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 16px 10px;
+      border-right: 1px solid var(--line);
+      background: var(--surface);
+      overflow: auto;
+    }
+
+    .subnav-title {
+      margin: 0 8px 14px;
+      font-size: var(--text-md);
+      font-weight: var(--weight-ui);
+      line-height: var(--text-md-lh);
+    }
+
+    .subnav nav { display: grid; gap: 2px; }
+
+    .subnav a {
+      display: flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      color: var(--rp-color-gray-600);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-ui);
+      line-height: var(--text-sm-lh);
+    }
+
+    .subnav a:hover { background: var(--rp-color-gray-100); color: var(--ink); }
+
+    .subnav a.active {
+      color: var(--brand);
+      background: var(--brand-subtle);
+      font-weight: 600;
+    }
+
+    .page { display: none; }
+    .page.is-active { display: block; }
+    .page.section.is-active {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .logo-group {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .logo-group h4 {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .content {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+    }
+
+    .content-bar {
+      display: flex;
+      align-items: center;
+      min-height: 52px;
+      padding: 0 28px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .content-bar strong {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-ui);
+      line-height: var(--text-sm-lh);
+    }
+
+    .content-bar .crumb {
+      color: var(--muted);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-ui);
+      line-height: var(--text-sm-lh);
+    }
+
+    .content-bar .sep {
+      margin: 0 8px;
+      color: var(--rp-color-gray-300);
+    }
+
+    .content-body {
+      flex: 1;
+      padding: 28px 32px 40px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .overview-hero {
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+
+    .usage-scene {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr 0.95fr;
+      gap: 14px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--brand) 12%, transparent), transparent 24%),
+        radial-gradient(circle at 88% 82%, color-mix(in srgb, var(--rp-color-green-travel-500) 12%, transparent), transparent 22%),
+        linear-gradient(180deg, var(--rp-color-darkblue-25) 0%, var(--rp-color-blue-25) 100%);
+      overflow: hidden;
+    }
+
+    .scene-card {
+      min-width: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .scene-card.offset-down { margin-top: 28px; }
+    .scene-card.offset-up { margin-top: -8px; }
+
+    .scene-card h4 {
+      margin: 0 0 12px;
+      font-size: 14px;
+    }
+
+    .scene-kicker {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .segmented {
+      display: inline-flex;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface-soft);
+    }
+
+    .segmented button {
+      height: 32px;
+      padding: 0 12px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--muted);
+    }
+
+    .segmented button[aria-pressed="true"] {
+      color: var(--ink);
+      background: var(--surface);
+      box-shadow: 0 1px 2px rgba(10, 13, 18, .08);
+    }
+
+    .theme-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .theme-swatch {
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border: 2px solid var(--surface);
+      border-radius: 8px;
+      box-shadow: 0 0 0 1px rgba(16, 28, 47, .16);
+      cursor: pointer;
+    }
+
+    .theme-swatch[aria-pressed="true"] {
+      box-shadow: 0 0 0 2px var(--brand);
+    }
+
+    .theme-hex {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 8px;
+      color: var(--muted);
+      background: var(--surface-soft);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .theme-color {
+      width: 36px;
+      height: 32px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .rp-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 8px;
+      border-radius: 6px;
+      background: var(--rp-color-gray-100);
+      color: var(--rp-color-gray-700);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .rp-tag[data-tone="success"] { background: var(--rp-color-success-50); color: var(--rp-color-success-700); }
+    .rp-tag[data-tone="error"] { background: var(--rp-color-error-50); color: var(--rp-color-error-700); }
+    .rp-tag[data-tone="warning"] { background: var(--rp-color-warning-50); color: var(--rp-color-warning-700); }
+    .rp-tag[data-tone="brand"] { background: var(--brand-subtle); color: var(--brand); }
+    .rp-tag[data-tone="processing"] { background: var(--brand-subtle); color: var(--brand); }
+
+    .tag-row,
+    .range-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .range-row button {
+      height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: var(--muted);
+    }
+
+    .range-row button[aria-pressed="true"] {
+      border-color: var(--brand);
+      color: var(--brand);
+      background: var(--brand-subtle);
+    }
+
+    .progress-track {
+      height: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: var(--rp-color-gray-200);
+    }
+
+    .progress-fill {
+      width: 50%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--brand);
+    }
+
+    .steps {
+      display: grid;
+      gap: 10px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 18px 1fr auto;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .step b {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--rp-color-gray-200);
+    }
+
+    .step[data-state="done"] b { background: var(--success); }
+    .step[data-state="current"] b { background: var(--brand); }
+    .step strong { color: var(--ink); font-weight: 600; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin: 12px 0 14px;
+    }
+
+    .stat-row div {
+      padding: 10px;
+      border-radius: 10px;
+      background: var(--surface-soft);
+    }
+
+    .stat-row strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .stat-row span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .chart {
+      display: flex;
+      align-items: end;
+      gap: 6px;
+      height: 88px;
+      padding-top: 8px;
+    }
+
+    .chart i {
+      display: block;
+      flex: 1;
+      border-radius: 6px 6px 2px 2px;
+      background: color-mix(in srgb, var(--brand) 55%, var(--rp-color-blue-50));
+    }
+
+    .chart i.active { background: var(--brand); }
+
+    .avatar-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar-row img,
+    .avatar-row span {
+      width: 28px;
+      height: 28px;
+      margin-left: -6px;
+      border: 2px solid var(--surface);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .avatar-row span {
+      display: grid;
+      place-items: center;
+      margin-left: -6px;
+      background: var(--brand-subtle);
+      color: var(--brand);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .avatar-row img:first-child,
+    .avatar-row span:first-child { margin-left: 0; }
+
+    .scene-form {
+      display: grid;
+      gap: 10px;
+    }
+
+    .scene-form label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .scene-form input {
+      width: 100%;
+    }
+
+    .otp-row {
+      display: grid;
+      grid-template-columns: repeat(4, 44px);
+      gap: 8px;
+    }
+
+    .otp-row input {
+      width: 44px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .scene-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .or-line {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .or-line::before,
+    .or-line::after {
+      content: "";
+      height: 1px;
+      background: var(--line);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: var(--text-title);
+      font-weight: var(--weight-title);
+      line-height: var(--text-title-lh);
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      max-width: 640px;
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: var(--text-md);
+      font-weight: var(--weight-ui);
+      line-height: var(--text-md-lh);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--surface);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: var(--text-md);
+      font-weight: var(--weight-ui);
+      line-height: var(--text-md-lh);
+      letter-spacing: -0.011em;
+    }
+
+    .section-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-ui);
+      line-height: var(--text-sm-lh);
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    input,
+    select,
+    button {
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+    }
+
+    input {
+      width: min(320px, 100%);
+      padding: 0 12px;
+    }
+
+    select { padding: 0 34px 0 12px; }
+
+    button {
+      padding: 0 12px;
+      cursor: pointer;
+    }
+
+    button.primary {
+      border-color: var(--brand);
+      color: var(--on-brand);
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .status-card {
+      min-height: 112px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .status-card strong {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .status-card span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .palette-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .palette {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .palette-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .palette-title strong {
+      font-size: 15px;
+    }
+
+    .palette-title span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(72px, 1fr));
+    }
+
+    .swatch {
+      min-height: 118px;
+      padding: 10px;
+      color: var(--swatch-text, var(--ink));
+      background: var(--swatch);
+      border-right: 1px solid rgba(16, 28, 47, .08);
+      border-top: 0;
+      border-bottom: 0;
+      border-left: 0;
+      border-radius: 0;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .swatch:last-child { border-right: 0; }
+
+    .swatch:hover {
+      box-shadow: inset 0 0 0 2px rgba(16, 28, 47, .22);
+    }
+
+    .swatch:focus-visible {
+      outline: 3px solid var(--brand);
+      outline-offset: -3px;
+    }
+
+    .swatch b,
+    .swatch small {
+      display: block;
+      text-shadow: 0 1px 16px rgba(255, 255, 255, .32);
+    }
+
+    .swatch b { font-size: 13px; }
+
+    .swatch small {
+      margin-top: 6px;
+      font-size: 11px;
+      opacity: .88;
+      word-break: break-word;
+    }
+
+    .table-wrap {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      font-size: 13px;
+      vertical-align: middle;
+    }
+
+    th {
+      color: var(--muted);
+      background: var(--surface-soft);
+      font-weight: 600;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--brand-subtle);
+      color: var(--brand-text);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+      border: 1px solid rgba(16, 28, 47, .16);
+      border-radius: 50%;
+      vertical-align: middle;
+      background: var(--dot);
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .roadmap article {
+      min-height: 160px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .roadmap h4 {
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+
+    .roadmap p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .component-showcase {
+      display: grid;
+      gap: 16px;
+    }
+
+    .component-panel {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .component-panel h4 {
+      margin: 0 0 12px;
+      font-size: 15px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .button-example {
+      display: grid;
+      justify-items: start;
+      gap: 6px;
+    }
+
+    .button-example span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: var(--weight-ui);
+    }
+
+    .rp-button {
+      --button-bg: var(--brand);
+      --button-border: var(--brand);
+      --button-text: var(--on-brand);
+      --button-hover-bg: color-mix(in srgb, var(--brand) 82%, #000);
+      --button-hover-border: color-mix(in srgb, var(--brand) 82%, #000);
+      --button-hover-text: var(--on-brand);
+      --button-height: 40px;
+      --button-padding-x: 14px;
+      --button-font-size: 14px;
+      --button-line-height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      min-width: 120px;
+      min-height: var(--button-height);
+      padding: 0 var(--button-padding-x);
+      border: 1px solid var(--button-border);
+      border-radius: 6px;
+      color: var(--button-text);
+      background: var(--button-bg);
+      box-shadow: 0 1px 2px rgba(10, 13, 18, .05);
+      font-family: var(--font);
+      font-size: var(--button-font-size);
+      font-weight: 600;
+      line-height: var(--button-line-height);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease, transform .1s ease;
+    }
+
+    .rp-button[data-size="xs"] {
+      --button-height: 32px;
+      --button-padding-x: 12px;
+      --button-font-size: 14px;
+      --button-line-height: 18px;
+      min-width: 96px;
+    }
+
+    .rp-button[data-size="sm"] {
+      --button-height: 36px;
+      --button-padding-x: 12px;
+      min-width: 104px;
+    }
+
+    .rp-button[data-size="lg"] {
+      --button-height: 44px;
+      --button-padding-x: 16px;
+      min-width: 132px;
+    }
+
+    .rp-button[data-size="xl"] {
+      --button-height: 48px;
+      --button-padding-x: 18px;
+      min-width: 136px;
+    }
+
+    .rp-button[data-style="outline"] {
+      --button-bg: var(--surface);
+      --button-text: var(--brand);
+      --button-hover-bg: var(--brand-subtle);
+      --button-hover-border: var(--brand);
+      --button-hover-text: var(--brand);
+    }
+
+    .rp-button[data-style="default"] {
+      --button-bg: var(--surface);
+      --button-border: var(--rp-color-gray-300);
+      --button-text: var(--ink);
+      --button-hover-bg: var(--rp-color-gray-50);
+      --button-hover-border: var(--rp-color-gray-300);
+      --button-hover-text: var(--ink);
+    }
+
+    .rp-button[data-style="ghost"],
+    .rp-button[data-style="text"] {
+      --button-bg: transparent;
+      --button-border: transparent;
+      --button-text: var(--ink);
+      --button-hover-bg: var(--rp-color-gray-100);
+      --button-hover-border: transparent;
+      --button-hover-text: var(--ink);
+      box-shadow: none;
+    }
+
+    .rp-button[data-style="link"] {
+      --button-bg: transparent;
+      --button-border: transparent;
+      --button-text: var(--brand);
+      --button-hover-bg: transparent;
+      --button-hover-border: transparent;
+      --button-hover-text: var(--brand);
+      box-shadow: none;
+      min-width: 0;
+      min-height: 20px;
+      padding: 0;
+    }
+
+    .rp-button[data-tone="darkblue"] {
+      --button-bg: var(--brand-dark);
+      --button-border: var(--brand-dark);
+      --button-text: var(--on-brand);
+      --button-hover-bg: var(--rp-color-darkblue-700);
+      --button-hover-border: var(--rp-color-darkblue-700);
+      --button-hover-text: var(--on-brand);
+    }
+
+    .rp-button[data-tone="red"] {
+      --button-bg: var(--rp-color-error-600);
+      --button-border: var(--rp-color-error-600);
+      --button-text: var(--on-brand);
+      --button-hover-bg: var(--rp-color-error-700);
+      --button-hover-border: var(--rp-color-error-700);
+      --button-hover-text: var(--on-brand);
+    }
+
+    .rp-button[data-style="outline"][data-tone="darkblue"] {
+      --button-bg: var(--surface);
+      --button-text: var(--brand-dark);
+      --button-hover-bg: var(--rp-color-darkblue-25);
+      --button-hover-border: var(--brand-dark);
+      --button-hover-text: var(--brand-dark);
+    }
+
+    .rp-button[data-style="outline"][data-tone="red"] {
+      --button-bg: var(--surface);
+      --button-text: var(--rp-color-error-600);
+      --button-hover-bg: var(--rp-color-error-25);
+      --button-hover-border: var(--rp-color-error-600);
+      --button-hover-text: var(--rp-color-error-600);
+    }
+
+    .rp-button:is(:hover, [data-state="hover"]):not(:disabled):not([data-state="disabled"]) {
+      --button-bg: var(--button-hover-bg);
+      --button-border: var(--button-hover-border);
+      --button-text: var(--button-hover-text);
+    }
+
+    .rp-button[data-style="link"]:is(:hover, [data-state="hover"]):not(:disabled) {
+      text-decoration: none;
+    }
+
+    .rp-button[data-style="link"]:is(:hover, [data-state="hover"]):not(:disabled):not(:has(.rp-button-icon)) {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .rp-button[data-style="link"]:is(:hover, [data-state="hover"]):not(:disabled) > :not(.rp-button-icon) {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .rp-button:focus-visible,
+    .rp-button[data-state="focus"] {
+      outline: 3px solid color-mix(in srgb, var(--brand) 22%, transparent);
+      outline-offset: 2px;
+    }
+
+    .rp-button:active:not(:disabled):not([data-state="disabled"]),
+    .rp-button[data-state="pressed"] {
+      transform: translateY(1px);
+      filter: brightness(.9);
+    }
+
+    .rp-button[data-style="link"]:active:not(:disabled) {
+      transform: none;
+    }
+
+    .rp-button:disabled,
+    .rp-button[data-state="disabled"] {
+      --button-bg: var(--rp-color-gray-100);
+      --button-border: var(--rp-color-gray-300);
+      --button-text: var(--rp-color-gray-400);
+      cursor: not-allowed;
+      filter: none;
+      transform: none;
+      text-decoration: none;
+    }
+
+    .rp-button-icon {
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .rp-button-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+    }
+
+    .rp-button[data-content="icon"] {
+      min-width: var(--button-height);
+      padding: 0;
+    }
+
+    .code-copy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .code-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .code-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-soft);
+    }
+
+    .code-card-head strong {
+      font-size: 13px;
+    }
+
+    .code-card pre {
+      margin: 0;
+      padding: 12px;
+      overflow: auto;
+      color: var(--rp-color-blue-50);
+      background: var(--rp-color-darkblue-800);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .asset-groups {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .asset-category {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .asset-category-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .asset-category-head::-webkit-details-marker { display: none; }
+
+    .asset-category-head h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .asset-category-head span,
+    .asset-category-meta {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .asset-category-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .asset-category-title::before {
+      content: ">";
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1;
+      transition: transform .16s ease;
+    }
+
+    .asset-category[open] .asset-category-title::before {
+      transform: rotate(90deg);
+    }
+
+    .asset-category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      padding: 10px;
+    }
+
+    .asset-card.compact {
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr);
+      align-items: center;
+      gap: 10px;
+      min-height: 0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .asset-card.compact .asset-preview {
+      min-height: 40px;
+      width: 40px;
+      margin: 0;
+      border-radius: 6px;
+    }
+
+    .asset-card.compact .asset-preview img {
+      max-width: 24px;
+      max-height: 24px;
+    }
+
+    .asset-card.compact h4 {
+      margin: 0;
+      overflow: hidden;
+      font-size: 13px;
+      line-height: 1.35;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .asset-card.compact .download-row {
+      margin-top: 7px;
+      gap: 4px;
+    }
+
+    .asset-card.compact .download-link {
+      min-height: 22px;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 11px;
+    }
+
+    .asset-card {
+      min-height: 156px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .asset-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 68px;
+      margin-bottom: 14px;
+      border: 1px dashed var(--rp-color-darkblue-100);
+      border-radius: 8px;
+      color: var(--brand-dark);
+      background: var(--surface-soft);
+      font-weight: 700;
+    }
+
+    .asset-preview.dark {
+      border-color: rgba(255, 255, 255, .22);
+      background: var(--rp-color-darkblue-800);
+    }
+
+    .asset-preview.main-logo {
+      min-height: 104px;
+    }
+
+    .asset-preview.main-logo img {
+      max-width: min(220px, 86%);
+      max-height: 82px;
+    }
+
+    .asset-preview img {
+      display: block;
+      max-width: 64px;
+      max-height: 64px;
+      object-fit: contain;
+    }
+
+    .asset-card h4 {
+      margin: 0 0 6px;
+      font-size: 15px;
+    }
+
+    .asset-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .asset-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .download-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .download-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--surface);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .download-link:hover {
+      border-color: var(--rp-color-blue-200);
+      background: var(--brand-subtle);
+    }
+
+    .effect-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .effect-card {
+      min-height: 150px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .effect-sample {
+      display: grid;
+      place-items: center;
+      width: 96px;
+      height: 72px;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      color: var(--muted);
+      background: var(--surface);
+      box-shadow: var(--effect-shadow);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .effect-blur {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--rp-color-blue-50), var(--rp-color-warning-50) 52%, var(--rp-color-success-50));
+    }
+
+    .effect-blur::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255, 255, 255, .6);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .42);
+      backdrop-filter: blur(var(--blur-radius));
+    }
+
+    .effect-card h4 {
+      margin: 0 0 6px;
+      font-size: 15px;
+    }
+
+    .effect-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .note {
+      padding: 14px 16px;
+      border: 1px solid var(--rp-color-warning-500);
+      border-radius: var(--radius);
+      color: var(--rp-color-warning-700);
+      background: var(--rp-color-warning-25);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .shell,
+      .shell.is-nav-collapsed {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+      }
+      .canvas {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+        min-height: auto;
+        border-radius: 0;
+      }
+      .sidebar,
+      .subnav {
+        position: static;
+        height: auto;
+      }
+      .nav-collapse { display: none; }
+      .sidebar { border-bottom: 1px solid rgba(255,255,255,.08); }
+      .subnav { border-right: 0; border-bottom: 1px solid var(--line); }
+      .topbar,
+      .section-head { display: grid; }
+      .meta,
+      .tools { justify-content: flex-start; }
+      .usage-scene,
+      .status-grid,
+      .roadmap,
+      .code-copy-grid,
+      .asset-grid,
+      .asset-category-grid,
+      .effect-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .scene-card.offset-down,
+      .scene-card.offset-up { margin-top: 0; }
+      .swatches { grid-template-columns: repeat(6, minmax(72px, 1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .content-body { padding: 22px 16px; }
+      .usage-scene,
+      .status-grid,
+      .roadmap,
+      .code-copy-grid,
+      .asset-grid,
+      .asset-category-grid,
+      .effect-grid,
+      .nav { grid-template-columns: 1fr; }
+      .swatches { grid-template-columns: repeat(3, minmax(72px, 1fr)); }
+      input,
+      select,
+      button { width: 100%; }
+      .theme-swatch,
+      .theme-color,
+      .segmented button,
+      .range-row button,
+      .otp-row input {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Design system navigation">
+      <button class="nav-collapse" id="navCollapse" type="button" aria-label="Collapse sidebar" title="Collapse sidebar">
+        <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 2.5 4 6l3.5 3.5M4.5 2.5 1 6l3.5 3.5"/></svg>
+      </button>
+      <div class="brand">
+        <div class="mark">RP</div>
+        <h1>RP</h1>
+      </div>
+      <button class="workspace" type="button"><span class="workspace-dot"></span>RP</button>
+      <nav class="nav" id="pageNav" aria-label="Design system pages"></nav>
+      <div class="sidebar-foot">Design system data</div>
+    </aside>
+    <div class="canvas">
+    <aside class="subnav" aria-label="Page sections">
+      <h2 class="subnav-title" id="subNavTitle">Overview</h2>
+      <nav id="subNav"></nav>
+    </aside>
+
+    <main class="content">
+      <header class="content-bar">
+        <span class="crumb" id="contentCrumb">Foundation</span>
+        <span class="sep">/</span>
+        <strong id="contentBarTitle">Overview</strong>
+      </header>
+      <div class="content-body">
+      <div class="page is-active" id="overview">
+      <header class="overview-hero">
+        <h2>Flexible theme customization</h2>
+        <p class="lead">Open style tokens และ semantic structure ทำให้ปรับธีมแล้วนำ component ไปใช้จริงได้ทันที ทั้งคนและ AI เปลี่ยนสีหลักด้านล่างแล้วดู UI ทั้งซีนอัปเดตตามกัน</p>
+      </header>
+
+      <section class="usage-scene" aria-label="ตัวอย่างการนำไปใช้จริง">
+        <article class="scene-card" id="overview-theme">
+          <div class="scene-kicker">Theme</div>
+          <div class="segmented" role="tablist" aria-label="Scene view">
+            <button type="button" id="viewComponents" aria-pressed="false">Components</button>
+            <button type="button" id="viewDashboard" aria-pressed="true">Dashboard</button>
+          </div>
+          <h4 style="margin-top: 16px;">Primary color</h4>
+          <div class="theme-row">
+            <button class="theme-swatch" type="button" data-theme="#0066FF" aria-label="RP Blue" aria-pressed="true" style="background:#0066FF"></button>
+            <button class="theme-swatch" type="button" data-theme="#1D3355" aria-label="DarkBlue" aria-pressed="false" style="background:#1D3355"></button>
+            <button class="theme-swatch" type="button" data-theme="#60BA46" aria-label="Travel Green" aria-pressed="false" style="background:#60BA46"></button>
+            <button class="theme-swatch" type="button" data-theme="#FF6600" aria-label="Pointspot Orange" aria-pressed="false" style="background:#FF6600"></button>
+            <input class="theme-color" id="themeColor" type="color" value="#0066FF" aria-label="Custom primary color">
+            <span class="theme-hex" id="themeHex">#0066FF</span>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <button class="rp-button" type="button">Primary Button</button>
+            <button class="rp-button" data-style="default" type="button">Default Button</button>
+            <button class="rp-button" data-style="ghost" type="button">Text Button</button>
+            <button class="rp-button" data-style="link" type="button">Link Button</button>
+          </div>
+        </article>
+
+        <article class="scene-card" id="sceneMain">
+          <div class="scene-kicker" id="sceneMainKicker">Dashboard</div>
+          <div class="range-row" role="group" aria-label="Date range">
+            <button type="button" aria-pressed="false">1D</button>
+            <button type="button" aria-pressed="true">7D</button>
+            <button type="button" aria-pressed="false">1M</button>
+            <button type="button" aria-pressed="false">1Y</button>
+            <button type="button" aria-pressed="false">All</button>
+          </div>
+          <div class="stat-row">
+            <div><strong>128</strong><span>Open chats</span></div>
+            <div><strong>36</strong><span>Emails</span></div>
+            <div><strong>50%</strong><span>Resolved</span></div>
+          </div>
+          <div class="progress-track" aria-label="Resolved 50 percent"><div class="progress-fill"></div></div>
+          <div class="chart" aria-hidden="true">
+            <i style="height:42%"></i><i style="height:58%"></i><i class="active" style="height:86%"></i><i style="height:64%"></i><i style="height:48%"></i><i style="height:72%"></i><i style="height:38%"></i>
+          </div>
+        </article>
+
+        <article class="scene-card offset-down" id="overview-status">
+          <div class="scene-kicker">Status</div>
+          <div class="tag-row">
+            <span class="rp-tag" data-tone="success">Success</span>
+            <span class="rp-tag" data-tone="error">Error</span>
+            <span class="rp-tag">Default</span>
+            <span class="rp-tag" data-tone="processing">Processing</span>
+            <span class="rp-tag" data-tone="warning">Warning</span>
+          </div>
+          <div class="steps" style="margin-top: 16px;">
+            <div class="step" data-state="done"><b></b><strong>Finished</strong><span>Done</span></div>
+            <div class="step" data-state="current"><b></b><strong>In Process</strong><span>3</span></div>
+            <div class="step"><b></b><strong>Waiting</strong><span>Next</span></div>
+          </div>
+        </article>
+
+        <article class="scene-card" id="overview-dropdown">
+          <div class="scene-kicker">Dropdown</div>
+          <label>
+            <span class="scene-kicker" style="display:block;margin-bottom:6px">Product</span>
+            <select id="sceneProduct" aria-label="Select product">
+              <option>R-CRM</option>
+              <option>R-Chat</option>
+              <option>R-Web</option>
+              <option>R-Booking</option>
+            </select>
+          </label>
+          <div class="avatar-row" style="margin-top: 16px;" aria-label="Assignees">
+            <img src="assets/LOGO-PRODUCT/SVG/icon-R-CRM.svg" alt="">
+            <img src="assets/LOGO-PRODUCT/SVG/icon-R-Chatbot.svg" alt="">
+            <img src="assets/LOGO-PRODUCT/SVG/icon-R-Web.svg" alt="">
+            <span>+5</span>
+          </div>
+        </article>
+
+        <article class="scene-card offset-up" id="overview-modal">
+          <div class="scene-kicker">Modal</div>
+          <h4>Are you OK?</h4>
+          <p style="margin:0;color:var(--muted);font-size:13px;line-height:1.55">ยืนยันก่อนส่งแคมเปญนี้ไปยังลูกค้า 128 ราย</p>
+          <div class="scene-actions">
+            <button class="rp-button" data-style="outline" type="button">Cancel</button>
+            <button class="rp-button" type="button">OK</button>
+          </div>
+        </article>
+
+        <article class="scene-card" id="overview-verify">
+          <div class="scene-kicker">Verify account</div>
+          <p style="margin:0 0 12px;color:var(--muted);font-size:13px;line-height:1.5">We've sent a code to a****@rp.com</p>
+          <div class="otp-row" aria-label="Verification code">
+            <input maxlength="1" value="6" aria-label="Digit 1">
+            <input maxlength="1" value="1" aria-label="Digit 2">
+            <input maxlength="1" aria-label="Digit 3">
+            <input maxlength="1" aria-label="Digit 4">
+          </div>
+          <p style="margin:10px 0 0;color:var(--muted);font-size:12px">Didn't receive a code? <button class="rp-button" data-style="link" type="button">Resend</button></p>
+        </article>
+
+        <article class="scene-card" id="overview-account">
+          <div class="scene-kicker">Create an account</div>
+          <p style="margin:0 0 12px;color:var(--muted);font-size:13px">Start with RP tokens. No extra theme file required.</p>
+          <form class="scene-form" onsubmit="return false">
+            <label>Email<input type="email" placeholder="you@rp.com"></label>
+            <button class="rp-button" type="button" style="width:100%">Get Started</button>
+            <div class="or-line">OR</div>
+            <button class="rp-button" data-style="outline" type="button" style="width:100%">Continue with Google</button>
+          </form>
+        </article>
+      </section>
+      </div>
+
+      <section class="section page" id="color">
+        <div class="section-head">
+          <div>
+            <h2>Global Colors</h2>
+            <p>Primitive scale from <code>Global/Color/{Family}/{Scale}</code>. ใช้เป็นฐานสำหรับ alias และ semantic token</p>
+          </div>
+          <div class="tools">
+            <input id="search" type="search" placeholder="Search family or hex" aria-label="Search colors">
+            <select id="familyFilter" aria-label="Filter color family">
+              <option value="all">All families</option>
+            </select>
+          </div>
+        </div>
+        <div class="palette-list" id="palettes"></div>
+      </section>
+
+      <section class="section page" id="typography">
+        <div class="section-head">
+          <div>
+            <h2>Typography</h2>
+            <p>Current type foundation aligned close to Ant Design density. Base UI text starts at 14/22 for readable product screens</p>
+          </div>
+          <div class="tools">
+            <select id="typeFilter" aria-label="Filter typography group">
+              <option value="all">All type groups</option>
+              <option value="Display">Display</option>
+              <option value="Content">Content</option>
+            </select>
+          </div>
+        </div>
+        <div class="note" id="type-note">Product UI และ design system ใช้ <code>Inter</code> สำหรับ Latin และ <code>Noto Sans Thai</code> สำหรับภาษาไทย ส่วน <code>FC Vision</code> จำกัดไว้สำหรับเว็บไซต์บริษัทและสื่อสิ่งพิมพ์เท่านั้น</div>
+        <div class="table-wrap" id="type-table" style="margin-top: 12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Style</th>
+                <th>Font stack</th>
+                <th>Size</th>
+                <th>Line height</th>
+                <th>Letter spacing</th>
+                <th>Weights</th>
+              </tr>
+            </thead>
+            <tbody id="typeRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section page" id="buttons">
+        <div class="section-head">
+          <div>
+            <h2>Buttons</h2>
+            <p>Component foundation จากไฟล์ Design System Main / - Buttons</p>
+          </div>
+        </div>
+        <div class="component-showcase">
+          <div class="component-panel" id="buttons-variants">
+            <h4>Styles</h4>
+            <div class="button-row">
+              <button class="rp-button" type="button">Primary Button</button>
+              <button class="rp-button" data-style="default" type="button">Default Button</button>
+              <button class="rp-button" data-style="ghost" type="button">Text Button</button>
+              <button class="rp-button" data-style="link" type="button">Link Button</button>
+            </div>
+          </div>
+          <div class="component-panel" id="buttons-content">
+            <h4>Content</h4>
+            <div class="button-row">
+              <div class="button-example">
+                <span>Label only</span>
+                <button class="rp-button" type="button">Primary Button</button>
+              </div>
+              <div class="button-example">
+                <span>Icon leading</span>
+                <button class="rp-button" type="button"><span class="rp-button-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></span>Primary Button</button>
+              </div>
+              <div class="button-example">
+                <span>Icon trailing</span>
+                <button class="rp-button" type="button">Primary Button<span class="rp-button-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M8 5l5 5-5 5"/></svg></span></button>
+              </div>
+              <div class="button-example">
+                <span>Leading and trailing</span>
+                <button class="rp-button" type="button"><span class="rp-button-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></span>Primary Button<span class="rp-button-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M8 5l5 5-5 5"/></svg></span></button>
+              </div>
+              <div class="button-example">
+                <span>Icon only</span>
+                <button class="rp-button" data-content="icon" type="button" aria-label="Add"><span class="rp-button-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></span></button>
+              </div>
+            </div>
+            <div class="button-row" style="margin-top: 14px;">
+              <div class="button-example">
+                <span>Default + leading</span>
+                <button class="rp-button" data-style="default" type="button"><span class="rp-button-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></span>Default Button</button>
+              </div>
+              <div class="button-example">
+                <span>Text + trailing</span>
+                <button class="rp-button" data-style="ghost" type="button">Text Button<span class="rp-button-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M8 5l5 5-5 5"/></svg></span></button>
+              </div>
+              <div class="button-example">
+                <span>Link + leading</span>
+                <button class="rp-button" data-style="link" type="button"><span class="rp-button-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></span><span>Link Button</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="component-panel" id="buttons-states">
+            <h4>States</h4>
+            <div class="button-row">
+              <button class="rp-button" type="button">Default</button>
+              <button class="rp-button" data-state="hover" type="button">Hover</button>
+              <button class="rp-button" data-state="focus" type="button">Focus</button>
+              <button class="rp-button" data-state="pressed" type="button">Pressed</button>
+              <button class="rp-button" data-state="disabled" type="button" disabled>Disabled</button>
+            </div>
+          </div>
+          <div class="component-panel" id="buttons-tones">
+            <h4>Function Tones</h4>
+            <div class="button-row">
+              <button class="rp-button" data-tone="darkblue" type="button">DarkBlue</button>
+              <button class="rp-button" data-tone="red" type="button">Red</button>
+              <button class="rp-button" data-style="outline" data-tone="darkblue" type="button">DarkBlue outline</button>
+              <button class="rp-button" data-style="outline" data-tone="red" type="button">Red outline</button>
+            </div>
+          </div>
+          <div class="component-panel" id="buttons-sizes">
+            <h4>Sizes</h4>
+            <div class="button-row">
+              <button class="rp-button" data-size="xs" type="button">XS</button>
+              <button class="rp-button" data-size="sm" type="button">SM</button>
+              <button class="rp-button" data-size="md" type="button">MD</button>
+              <button class="rp-button" data-size="lg" type="button">LG</button>
+              <button class="rp-button" data-size="xl" type="button">XL</button>
+            </div>
+          </div>
+        </div>
+        <div class="table-wrap" id="buttons-spec" style="margin-top: 12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Size</th>
+                <th>Height</th>
+                <th>Min width</th>
+                <th>Padding X</th>
+                <th>Font</th>
+                <th>Icon</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>xs</code></td><td>32px</td><td>109px in Figma</td><td>12px</td><td>14/18 SemiBold</td><td>20px</td></tr>
+              <tr><td><code>sm</code></td><td>36px</td><td>124px in Figma</td><td>12px</td><td>14/20 SemiBold</td><td>20px</td></tr>
+              <tr><td><code>md</code></td><td>40px</td><td>120px</td><td>14px</td><td>14/20 SemiBold</td><td>20px</td></tr>
+              <tr><td><code>lg</code></td><td>44px</td><td>138px in Figma</td><td>16px</td><td>14/20 SemiBold</td><td>20px</td></tr>
+              <tr><td><code>xl</code></td><td>48px</td><td>142px in Figma</td><td>18px</td><td>14/20 SemiBold</td><td>20px</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap" id="buttons-props" style="margin-top: 12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Options</th>
+                <th>Current note</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Style</td><td><code>Primary</code>, <code>Default</code>, <code>Text</code>, <code>Link</code></td><td>Label in the button matches the style name</td></tr>
+              <tr><td>State</td><td><code>Default</code>, <code>Hover</code>, <code>Focus</code>, <code>Pressed</code>, <code>Disabled</code></td><td>Use focus ring as visible keyboard indicator</td></tr>
+              <tr><td>Tone</td><td><code>Primary</code>, <code>DarkBlue</code>, <code>Red</code></td><td>Primary and Function groups exist in Figma</td></tr>
+              <tr><td>Content</td><td><code>Label</code>, <code>Icon leading</code>, <code>Icon trailing</code>, <code>Both</code>, <code>Icon only</code></td><td>ใส่ <code>.rp-button-icon</code> หน้า หลัง หรือทั้งสองด้านของข้อความ</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="code-copy-grid" id="buttons-code" style="margin-top: 12px;">
+          <article class="code-card">
+            <div class="code-card-head">
+              <strong>CSS tokens</strong>
+              <button class="copy-snippet" type="button" data-copy-target="buttonCssSnippet">Copy</button>
+            </div>
+            <pre id="buttonCssSnippet">--rp-button-radius: 6px;
+--rp-button-gap: 4px;
+--rp-button-icon-size: 20px;
+--rp-button-md-height: 40px;
+--rp-button-md-padding-x: 14px;</pre>
+          </article>
+          <article class="code-card">
+            <div class="code-card-head">
+              <strong>Usage</strong>
+              <button class="copy-snippet" type="button" data-copy-target="buttonUsageSnippet">Copy</button>
+            </div>
+            <pre id="buttonUsageSnippet">&lt;button class="rp-button"&gt;
+  &lt;span class="rp-button-icon" aria-hidden="true"&gt;…&lt;/span&gt;
+  Primary Button
+&lt;/button&gt;</pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="section page" id="logos">
+        <div class="section-head">
+          <div>
+            <h2>Product Icons</h2>
+            <p>Main logo, product icons และ downloadable assets</p>
+          </div>
+        </div>
+        <div class="asset-groups" id="logoGrid" style="margin-top: 12px;"></div>
+      </section>
+
+      <section class="section page" id="shared-icons">
+        <div class="section-head">
+          <div>
+            <h2>Shared Icons</h2>
+            <p>Core icon set ที่ใช้ร่วมกันทุก product</p>
+          </div>
+          <div class="tools">
+            <input id="iconSearch" type="search" placeholder="Search icons" aria-label="Search shared icons">
+            <select id="iconCategoryFilter" aria-label="Filter icon category">
+              <option value="all">All icon categories</option>
+            </select>
+            <button id="clearIconSearch" type="button">Clear</button>
+          </div>
+        </div>
+        <div class="asset-groups" id="sharedIconGrid"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Examples</th>
+                <th>Default size</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Navigation</td>
+                <td><code>icon-home</code>, <code>icon-menu</code>, <code>icon-list</code>, <code>icon-settings</code></td>
+                <td>20px</td>
+                <td>Ready to document</td>
+              </tr>
+              <tr>
+                <td>Actions</td>
+                <td><code>icon-plus</code>, <code>icon-minus</code>, <code>icon-check</code>, <code>icon-delete</code>, <code>icon-edit</code></td>
+                <td>20px</td>
+                <td>Ready to document</td>
+              </tr>
+              <tr>
+                <td>Communication</td>
+                <td><code>icon-mail</code>, <code>icon-message</code>, <code>icon-comment</code>, <code>icon-sms</code></td>
+                <td>20px</td>
+                <td>Ready to document</td>
+              </tr>
+              <tr>
+                <td>System</td>
+                <td><code>icon-info</code>, <code>icon-help</code>, <code>icon-notifications</code>, <code>icon-lock</code></td>
+                <td>20px</td>
+                <td>Ready to document</td>
+              </tr>
+              <tr>
+                <td>Directional</td>
+                <td><code>icon-arrow-left</code>, <code>icon-arrow-right</code>, <code>icon-arrow-up</code>, <code>icon-arrow-down</code></td>
+                <td>20px</td>
+                <td>Ready to document</td>
+              </tr>
+              <tr>
+                <td>Social</td>
+                <td><code>line</code>, <code>fb</code>, <code>ig</code>, <code>youtube</code>, <code>x</code>, <code>shopee</code></td>
+                <td>32px</td>
+                <td>Needs naming cleanup</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section page" id="effects">
+        <div class="section-head">
+          <div>
+            <h2>Effects</h2>
+            <p>Shadow, focus ring และ blur styles จากหน้า <code>- Effect styles</code></p>
+          </div>
+        </div>
+        <div class="effect-grid" id="effectGrid"></div>
+        <div class="table-wrap" id="effects-spec" style="margin-top: 12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Styles</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Shadows</td>
+                <td><code>xs</code>, <code>sm</code>, <code>md</code>, <code>ld</code>, <code>xl</code>, <code>2xl</code>, <code>3xl</code></td>
+                <td>Local effect styles exist</td>
+              </tr>
+              <tr>
+                <td>Focus rings</td>
+                <td>Uses inner shadow / brand color reference</td>
+                <td>Ready to document as focus indicator</td>
+              </tr>
+              <tr>
+                <td>Blurs</td>
+                <td><code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code> with light/dark examples</td>
+                <td>On canvas, not confirmed as local effect styles</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section page" id="semantic">
+        <div class="section-head">
+          <div>
+            <h2>Semantic Registry</h2>
+            <p>ชุดชื่อสำหรับการใช้งานจริงใน UI เช่น Background, Text, Border และ Foreground</p>
+          </div>
+          <button class="primary" id="copyCss" type="button">Copy CSS seed</button>
+        </div>
+        <div class="note" id="semantic-note">รายการ semantic หลายตัวใน Figma เป็น alias จึงแสดงเป็น token name ก่อน ส่วนค่าจริงควร resolve และเติม code syntax ในรอบถัดไป</div>
+        <div class="table-wrap" id="semantic-table" style="margin-top: 12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Group</th>
+                <th>Value</th>
+                <th>Recommended scope</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="semanticRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section page" id="structure">
+        <div class="section-head">
+          <div>
+            <h2>Global Structure</h2>
+            <p>โครงสร้างไฟล์ที่ควรใช้เก็บ RP design system เพื่อเติมข้อมูลต่อเป็นระยะ</p>
+          </div>
+        </div>
+        <div class="roadmap">
+          <article id="structure-foundation">
+            <h4>01 Foundation</h4>
+            <p>Color, typography, spacing, radius, grid, elevation และ content token ที่เป็นพื้นฐานร่วมทุก product</p>
+          </article>
+          <article id="structure-assets">
+            <h4>02 Assets</h4>
+            <p>Logo, icon, illustration, product mark และไฟล์ reference สำหรับ brand identity หรือ CI</p>
+          </article>
+          <article id="structure-components">
+            <h4>03 Components</h4>
+            <p>Button, input, select, card, table, modal และ navigation พร้อม state, variant และ usage note</p>
+          </article>
+          <article id="structure-patterns">
+            <h4>04 Patterns</h4>
+            <p>Form flow, empty state, error state, onboarding, dashboard layout และ reusable product patterns</p>
+          </article>
+          <article id="structure-guidelines">
+            <h4>05 Guidelines</h4>
+            <p>Naming, accessibility, contrast, writing tone, token usage และ handoff checklist</p>
+          </article>
+          <article id="structure-changelog">
+            <h4>06 Changelog</h4>
+            <p>บันทึกการเพิ่ม ลบ แก้ token/component เพื่อให้ทีมตามเวอร์ชันและเหตุผลของการเปลี่ยนได้</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section page" id="next">
+        <div class="section-head">
+          <div>
+            <h2>Next Cleanup</h2>
+            <p>งานต่อจากไฟล์นี้ก่อนเริ่มทำ component library</p>
+          </div>
+        </div>
+        <div class="table-wrap" id="next-tasks">
+          <table>
+            <thead>
+              <tr>
+                <th>Priority</th>
+                <th>Task</th>
+                <th>Why it matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="chip">P1</span></td>
+                <td>Set scopes for color variables</td>
+                <td>ลดการปนกันใน property picker และทำให้ token ใช้งานตรงบริบท</td>
+              </tr>
+              <tr>
+                <td><span class="chip">P1</span></td>
+                <td>Add WEB code syntax</td>
+                <td>ผูก Figma token กับ CSS variable เช่น <code>var(--rp-color-blue-500)</code></td>
+              </tr>
+              <tr>
+                <td><span class="chip">P1</span></td>
+                <td>Create local text styles</td>
+                <td>ตอนนี้มี text variables แต่ local text styles ตรวจเจอเป็น 0 จึงควรสร้าง style ที่ designer เลือกใช้ได้จริง</td>
+              </tr>
+              <tr>
+                <td><span class="chip">P1</span></td>
+                <td>Align UI text with Ant density</td>
+                <td>ตั้ง default body/control เป็น <code>Content sm 14/22</code> และใช้ <code>Content md 16/24</code> เป็น large text</td>
+              </tr>
+              <tr>
+                <td><span class="chip">P1</span></td>
+                <td>Separate brand font from UI font</td>
+                <td><code>FC Vision</code> ใช้เฉพาะเว็บไซต์บริษัทและสื่อสิ่งพิมพ์ ส่วน product UI ใช้ <code>Inter</code> + <code>Noto Sans Thai</code></td>
+              </tr>
+              <tr>
+                <td><span class="chip">P1</span></td>
+                <td>Normalize logo asset names</td>
+                <td>หน้า Logos มี asset พร้อมใช้หลายตัว แต่ควรแก้ชื่อและจัดหมวดก่อน publish เป็น library</td>
+              </tr>
+              <tr>
+                <td><span class="chip">P1</span></td>
+                <td>Export shared icons</td>
+                <td>หน้า Icons มี core icons ประมาณ <code>182</code> รายการ ควร export เป็น SVG/PNG แล้วเชื่อม registry แบบเดียวกับ Product Icons</td>
+              </tr>
+              <tr>
+                <td><span class="chip">P2</span></td>
+                <td>Fix naming typos</td>
+                <td>เช่น <code>bg-susscess-primary</code> เพื่อป้องกัน token ซ้ำในอนาคต</td>
+              </tr>
+              <tr>
+                <td><span class="chip">P2</span></td>
+                <td>Resolve semantic aliases</td>
+                <td>ทำให้เอกสาร HTML แสดงสีจริงของ Text, Background, Border, Foreground ได้ครบ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="footer">RP Design System seed file. Built from the current Foundation Figma structure.</p>
+      </div>
+    </main>
+    </div>
+  </div>
+
+  <script>
+    const families = {
+      Blue: ["#EBF3FF","#E0EDFF","#B2D1FF","#99C1FF","#66A3FF","#4D94FF","#0066FF","#0056D6","#0048B2","#003380","#00255C","#00193D"],
+      Darkblue: ["#F6F7F8","#EEF0F2","#B9C0CA","#97A1B1","#68768D","#4A5C77","#1D3355","#1A2E4D","#15243C","#101C2F","#0C1524","#060B13"],
+      Gray: ["#FDFDFD","#FAFAFA","#F5F5F5","#E9EAEB","#D5D7DA","#A4A7AE","#717680","#535862","#414651","#252B37","#181D27","#0A0D12"],
+      "Green-travel": ["#F6FBF4","#ECF7E9","#CFEAC7","#BFE3B5","#9FD590","#8FCF7D","#60BA46","#509C3A","#438230","#305D23","#224319","#172D11"],
+      "Orange-pointspot": ["#FFF0E5","#FFE0CC","#FFD1B2","#FFC299","#FFA366","#FF944D","#FF6600","#D65600","#B24700","#803300","#4D2300","#3D1800"],
+      Success: ["#F6FEF9","#ECFDF3","#DCFAE6","#A9EFC5","#75E0A7","#47CD89","#17B26A","#079455","#067647","#085D3A","#074D31","#053321"],
+      Warning: ["#FFFBF5","#FEF4E6","#FDDEB5","#FABC6B","#F9B152","#F8A130","#F79009","#DE8107","#C67306","#945605","#7C4803","#4B2B02"],
+      Error: ["#FFFBFA","#FEF3F2","#FEE4E2","#FECDCA","#FDA29B","#F97066","#F04438","#ED2012","#D51D10","#AB170D","#771009","#470A05"],
+      Red: ["#FDF2F2","#FBE5E5","#F4BDBD","#ED9191","#E66565","#E14646","#DB2323","#B91E1E","#A71B1B","#7B1414","#610F0F","#420B0B"],
+      Yellow: ["#FFF9E5","#FFF2CC","#FFECB2","#FFE699","#FFDC70","#FFCF3D","#FFC61A","#D6A100","#B88A00","#8F6B00","#705400","#4D3A00"],
+      Orange: ["#FFF9F5","#FFF0E5","#FFD1B2","#FFB280","#FFA266","#FF893D","#FF771F","#FF6400","#E55A00","#C24C00","#A34000","#803200"],
+      Green: ["#EBF9EF","#D7F4DE","#C3EECE","#9CE3AE","#74D88E","#58D077","#33B555","#2D9F4B","#278B41","#1F6F34","#195829","#113C1C"],
+      Sky: ["#EFFEFE","#E7FDFD","#B7FAFA","#9FF9F9","#6FF6F6","#3FF3F3","#0FE5E5","#0DC9C9","#0CB6B6","#09867E","#076969","#054848"],
+      Purple: ["#FAF5FF","#F1E5FF","#D6B2FF","#BB80FF","#A04DFF","#8D29FF","#7700FF","#6400D6","#5A00C2","#43008F","#340070","#24004D"],
+      Pink: ["#FFF5FD","#FFE6F9","#FEB3EE","#FE81E2","#FD68DD","#FD3FD3","#FC03C6","#D402A6","#C00296","#8D016F","#6F0157","#4C013B"]
+    };
+
+    const scales = ["25","50","100","200","300","400","500","600","700","800","900","950"];
+
+    const semanticTokens = [
+      ["Background/bg-primary", "Background", "alias", "FRAME_FILL, SHAPE_FILL"],
+      ["Background/bg-primary_hover", "Background", "alias", "FRAME_FILL, SHAPE_FILL"],
+      ["Background/bg-brand-solid", "Background", "alias", "FRAME_FILL, SHAPE_FILL"],
+      ["Background/bg-error-solid", "Background", "alias", "FRAME_FILL, SHAPE_FILL"],
+      ["Background/bg-pin-message", "Background", "#FFFAEB", "FRAME_FILL, SHAPE_FILL"],
+      ["Text/primary", "Text", "alias", "TEXT_FILL"],
+      ["Text/secondary", "Text", "alias", "TEXT_FILL"],
+      ["Text/brand-primary", "Text", "alias", "TEXT_FILL"],
+      ["Text/error-primary", "Text", "alias", "TEXT_FILL"],
+      ["Border/border-primary", "Border", "alias", "STROKE_COLOR"],
+      ["Border/border-brand", "Border", "alias", "STROKE_COLOR"],
+      ["Border/border-error", "Border", "alias", "STROKE_COLOR"],
+      ["Foreground/fg-primary", "Foreground", "alias", "TEXT_FILL, SHAPE_FILL"],
+      ["Foreground/fg-brand-primary", "Foreground", "alias", "TEXT_FILL, SHAPE_FILL"],
+      ["Foreground/fg-error-primary", "Foreground", "alias", "TEXT_FILL, SHAPE_FILL"]
+    ];
+
+    const typography = [
+      ["Display 2xl", "Display", "Inter, Noto Sans Thai", 68, 76, "-2%", "400, 500, 600, 700"],
+      ["Display xl", "Display", "Inter, Noto Sans Thai", 56, 64, "-2%", "400, 500, 600, 700"],
+      ["Display lg", "Display", "Inter, Noto Sans Thai", 46, 54, "-2%", "400, 500, 600, 700"],
+      ["Display md", "Display", "Inter, Noto Sans Thai", 38, 46, "-2%", "400, 500, 600, 700"],
+      ["Display sm", "Display", "Inter, Noto Sans Thai", 30, 38, "0%", "400, 500, 600, 700"],
+      ["Display xs", "Display", "Inter, Noto Sans Thai", 24, 32, "0%", "400, 500, 600, 700"],
+      ["Content xl", "Content", "Inter, Noto Sans Thai", 20, 28, "0%", "400, 500, 600, 700"],
+      ["Content lg", "Content", "Inter, Noto Sans Thai", 18, 28, "0%", "400, 500, 600, 700"],
+      ["Content md", "Content", "Inter, Noto Sans Thai", 16, 24, "0%", "400, 500, 600, 700"],
+      ["Content sm", "Content", "Inter, Noto Sans Thai", 14, 22, "0%", "400, 500, 600, 700"],
+      ["Content xs", "Content", "Inter, Noto Sans Thai", 12, 20, "0%", "400, 500, 600, 700"]
+    ];
+
+    const logoAssets = [
+      ["Logo-RP-full", "Main Logo", "Logo-RP-full"],
+      ["logo-RP-full-white", "Main Logo", "logo-RP-full-white"],
+      ["Logo-RP-full-Vertical", "Main Logo", "Logo-RP-full-Vertical"],
+      ["Logo-RP-full-Vertical-white", "Main Logo", "Logo-RP-full-Vertical-white"],
+      ["logo-RP-traveltech", "Main Logo", "logo-RP-traveltech"],
+      ["logo-RP-traveltech-white", "Main Logo", "logo-RP-traveltech-white"],
+      ["logo-RMP", "Main Logo", "logo-RMP"],
+      ["logo-RMP-white", "Main Logo", "logo-RMP-white"],
+      ["icon-R-Ads", "Product", "icon-R-Ads"],
+      ["icon-R-Booking", "Product", "icon-R-Booking"],
+      ["icon-R-Chatbot", "Product", "icon-R-Chatbot"],
+      ["icon-R-Commerce", "Product", "icon-R-Commerce"],
+      ["icon-R-CRM", "Product", "icon-R-CRM"],
+      ["icon-R-Customers", "Product", "icon-R-Customers"],
+      ["icon-R-Dynamic", "Product", "icon-R-Dynamic"],
+      ["icon-R-FAQ", "Product", "icon-R-FAQ"],
+      ["icon-R-Insights", "Product", "icon-R-Insights"],
+      ["icon-R-Message", "Product", "icon-R-Message"],
+      ["icon-R-Service", "Product", "icon-R-Service"],
+      ["icon-R-Shop", "Product", "icon-R-Shop"],
+      ["icon-R-Team", "Product", "icon-R-Team"],
+      ["icon-R-Web", "Product", "icon-R-Web"],
+      ["icon-R-Widget", "Product", "icon-R-Widget"],
+      ["logo-R-ChatCenter", "Product", "logo-R-ChatCenter"],
+      ["icon-CreativeHub", "Product", "icon-CreativeHub"],
+      ["icon-Marketing", "Product", "icon-Marketing"],
+      ["icon-Pointspot", "Product", "icon-Pointspot"],
+      ["icon-SEO", "Product", "icon-SEO"],
+      ["icon-FlowAccount", "Integration", "icon-FlowAccount"],
+      ["icon-PeakAccount", "Integration", "icon-PeakAccount"],
+      ["icon-SAP", "Integration", "icon-SAP"]
+    ];
+
+    const sharedIconAssets = [
+      ["code_off",[["SVG","assets/Icons/svg/code_off.svg"],["PNG 1x","assets/Icons/1x/code_off.png"],["PNG 2x","assets/Icons/2x/code_off.png"],["PNG 4x","assets/Icons/4x/code_off.png"]]],
+      ["goal (1) 1",[["SVG","assets/Icons/svg/goal (1) 1.svg"],["PNG 1x","assets/Icons/1x/goal (1) 1.png"],["PNG 2x","assets/Icons/2x/goal (1) 1.png"],["PNG 4x","assets/Icons/4x/goal (1) 1.png"]]],
+      ["hourglass_bottom",[["SVG","assets/Icons/svg/hourglass_bottom.svg"],["PNG 1x","assets/Icons/1x/hourglass_bottom.png"],["PNG 2x","assets/Icons/2x/hourglass_bottom.png"],["PNG 4x","assets/Icons/4x/hourglass_bottom.png"]]],
+      ["icon- delete-circle",[["SVG","assets/Icons/svg/icon- delete-circle.svg"],["PNG 1x","assets/Icons/1x/icon- delete-circle.png"],["PNG 2x","assets/Icons/2x/icon- delete-circle.png"],["PNG 4x","assets/Icons/4x/icon- delete-circle.png"]]],
+      ["icon-add_circle",[["SVG","assets/Icons/svg/icon-add_circle.svg"],["PNG 1x","assets/Icons/1x/icon-add_circle.png"],["PNG 2x","assets/Icons/2x/icon-add_circle.png"],["PNG 4x","assets/Icons/4x/icon-add_circle.png"]]],
+      ["icon-add_comment",[["SVG","assets/Icons/svg/icon-add_comment.svg"],["PNG 1x","assets/Icons/1x/icon-add_comment.png"],["PNG 2x","assets/Icons/2x/icon-add_comment.png"],["PNG 4x","assets/Icons/4x/icon-add_comment.png"]]],
+      ["icon-add_comment-fill",[["SVG","assets/Icons/svg/icon-add_comment-fill.svg"],["PNG 1x","assets/Icons/1x/icon-add_comment-fill.png"],["PNG 2x","assets/Icons/2x/icon-add_comment-fill.png"],["PNG 4x","assets/Icons/4x/icon-add_comment-fill.png"]]],
+      ["icon-ai",[["SVG","assets/Icons/svg/icon-ai.svg"],["PNG 1x","assets/Icons/1x/icon-ai.png"],["PNG 2x","assets/Icons/2x/icon-ai.png"],["PNG 4x","assets/Icons/4x/icon-ai.png"]]],
+      ["icon-analytics",[["SVG","assets/Icons/svg/icon-analytics.svg"],["PNG 1x","assets/Icons/1x/icon-analytics.png"],["PNG 2x","assets/Icons/2x/icon-analytics.png"],["PNG 4x","assets/Icons/4x/icon-analytics.png"]]],
+      ["icon-archive",[["SVG","assets/Icons/svg/icon-archive.svg"],["PNG 1x","assets/Icons/1x/icon-archive.png"],["PNG 2x","assets/Icons/2x/icon-archive.png"],["PNG 4x","assets/Icons/4x/icon-archive.png"]]],
+      ["icon-arrow_down-02",[["SVG","assets/Icons/svg/icon-arrow_down-02.svg"],["PNG 1x","assets/Icons/1x/icon-arrow_down-02.png"],["PNG 2x","assets/Icons/2x/icon-arrow_down-02.png"],["PNG 4x","assets/Icons/4x/icon-arrow_down-02.png"]]],
+      ["icon-arrow_insert",[["SVG","assets/Icons/svg/icon-arrow_insert.svg"],["PNG 1x","assets/Icons/1x/icon-arrow_insert.png"],["PNG 2x","assets/Icons/2x/icon-arrow_insert.png"],["PNG 4x","assets/Icons/4x/icon-arrow_insert.png"]]],
+      ["icon-arrow_up-02",[["SVG","assets/Icons/svg/icon-arrow_up-02.svg"],["PNG 1x","assets/Icons/1x/icon-arrow_up-02.png"],["PNG 2x","assets/Icons/2x/icon-arrow_up-02.png"],["PNG 4x","assets/Icons/4x/icon-arrow_up-02.png"]]],
+      ["icon-arrow-double-left",[["SVG","assets/Icons/svg/icon-arrow-double-left.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-double-left.png"],["PNG 2x","assets/Icons/2x/icon-arrow-double-left.png"],["PNG 4x","assets/Icons/4x/icon-arrow-double-left.png"]]],
+      ["icon-arrow-double-right",[["SVG","assets/Icons/svg/icon-arrow-double-right.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-double-right.png"],["PNG 2x","assets/Icons/2x/icon-arrow-double-right.png"],["PNG 4x","assets/Icons/4x/icon-arrow-double-right.png"]]],
+      ["icon-arrow-down",[["SVG","assets/Icons/svg/icon-arrow-down.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-down.png"],["PNG 2x","assets/Icons/2x/icon-arrow-down.png"],["PNG 4x","assets/Icons/4x/icon-arrow-down.png"]]],
+      ["icon-arrow-fill-down",[["SVG","assets/Icons/svg/icon-arrow-fill-down.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-fill-down.png"],["PNG 2x","assets/Icons/2x/icon-arrow-fill-down.png"],["PNG 4x","assets/Icons/4x/icon-arrow-fill-down.png"]]],
+      ["icon-arrow-fill-up",[["SVG","assets/Icons/svg/icon-arrow-fill-up.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-fill-up.png"],["PNG 2x","assets/Icons/2x/icon-arrow-fill-up.png"],["PNG 4x","assets/Icons/4x/icon-arrow-fill-up.png"]]],
+      ["icon-arrow-left",[["SVG","assets/Icons/svg/icon-arrow-left.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-left.png"],["PNG 2x","assets/Icons/2x/icon-arrow-left.png"],["PNG 4x","assets/Icons/4x/icon-arrow-left.png"]]],
+      ["icon-arrow-left-02",[["SVG","assets/Icons/svg/icon-arrow-left-02.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-left-02.png"],["PNG 2x","assets/Icons/2x/icon-arrow-left-02.png"],["PNG 4x","assets/Icons/4x/icon-arrow-left-02.png"]]],
+      ["icon-arrow-left-03",[["SVG","assets/Icons/svg/icon-arrow-left-03.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-left-03.png"],["PNG 2x","assets/Icons/2x/icon-arrow-left-03.png"],["PNG 4x","assets/Icons/4x/icon-arrow-left-03.png"]]],
+      ["icon-arrow-left-03-1",[["SVG","assets/Icons/svg/icon-arrow-left-03-1.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-left-03-1.png"],["PNG 2x","assets/Icons/2x/icon-arrow-left-03-1.png"],["PNG 4x","assets/Icons/4x/icon-arrow-left-03-1.png"]]],
+      ["icon-arrow-right",[["SVG","assets/Icons/svg/icon-arrow-right.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-right.png"],["PNG 2x","assets/Icons/2x/icon-arrow-right.png"],["PNG 4x","assets/Icons/4x/icon-arrow-right.png"]]],
+      ["icon-arrow-right-02",[["SVG","assets/Icons/svg/icon-arrow-right-02.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-right-02.png"],["PNG 2x","assets/Icons/2x/icon-arrow-right-02.png"],["PNG 4x","assets/Icons/4x/icon-arrow-right-02.png"]]],
+      ["icon-arrow-right-03",[["SVG","assets/Icons/svg/icon-arrow-right-03.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-right-03.png"],["PNG 2x","assets/Icons/2x/icon-arrow-right-03.png"],["PNG 4x","assets/Icons/4x/icon-arrow-right-03.png"]]],
+      ["icon-arrow-up",[["SVG","assets/Icons/svg/icon-arrow-up.svg"],["PNG 1x","assets/Icons/1x/icon-arrow-up.png"],["PNG 2x","assets/Icons/2x/icon-arrow-up.png"],["PNG 4x","assets/Icons/4x/icon-arrow-up.png"]]],
+      ["icon-assign",[["SVG","assets/Icons/svg/icon-assign.svg"],["PNG 1x","assets/Icons/1x/icon-assign.png"],["PNG 2x","assets/Icons/2x/icon-assign.png"],["PNG 4x","assets/Icons/4x/icon-assign.png"]]],
+      ["icon-attach",[["SVG","assets/Icons/svg/icon-attach.svg"],["PNG 1x","assets/Icons/1x/icon-attach.png"],["PNG 2x","assets/Icons/2x/icon-attach.png"],["PNG 4x","assets/Icons/4x/icon-attach.png"]]],
+      ["icon-attach2",[["SVG","assets/Icons/svg/icon-attach2.svg"],["PNG 1x","assets/Icons/1x/icon-attach2.png"],["PNG 2x","assets/Icons/2x/icon-attach2.png"],["PNG 4x","assets/Icons/4x/icon-attach2.png"]]],
+      ["icon-block",[["SVG","assets/Icons/svg/icon-block.svg"],["PNG 1x","assets/Icons/1x/icon-block.png"],["PNG 2x","assets/Icons/2x/icon-block.png"],["PNG 4x","assets/Icons/4x/icon-block.png"]]],
+      ["icon-build",[["SVG","assets/Icons/svg/icon-build.svg"],["PNG 1x","assets/Icons/1x/icon-build.png"],["PNG 2x","assets/Icons/2x/icon-build.png"],["PNG 4x","assets/Icons/4x/icon-build.png"]]],
+      ["icon-calendar",[["SVG","assets/Icons/svg/icon-calendar.svg"],["PNG 1x","assets/Icons/1x/icon-calendar.png"],["PNG 2x","assets/Icons/2x/icon-calendar.png"],["PNG 4x","assets/Icons/4x/icon-calendar.png"]]],
+      ["icon-callnote",[["SVG","assets/Icons/svg/icon-callnote.svg"],["PNG 1x","assets/Icons/1x/icon-callnote.png"],["PNG 2x","assets/Icons/2x/icon-callnote.png"],["PNG 4x","assets/Icons/4x/icon-callnote.png"]]],
+      ["icon-callnote-1",[["SVG","assets/Icons/svg/icon-callnote-1.svg"],["PNG 1x","assets/Icons/1x/icon-callnote-1.png"],["PNG 2x","assets/Icons/2x/icon-callnote-1.png"],["PNG 4x","assets/Icons/4x/icon-callnote-1.png"]]],
+      ["icon-chat-room",[["SVG","assets/Icons/svg/icon-chat-room.svg"],["PNG 1x","assets/Icons/1x/icon-chat-room.png"],["PNG 2x","assets/Icons/2x/icon-chat-room.png"],["PNG 4x","assets/Icons/4x/icon-chat-room.png"]]],
+      ["icon-chat2",[["SVG","assets/Icons/svg/icon-chat2.svg"],["PNG 1x","assets/Icons/1x/icon-chat2.png"],["PNG 2x","assets/Icons/2x/icon-chat2.png"],["PNG 4x","assets/Icons/4x/icon-chat2.png"]]],
+      ["icon-check",[["SVG","assets/Icons/svg/icon-check.svg"],["PNG 1x","assets/Icons/1x/icon-check.png"],["PNG 2x","assets/Icons/2x/icon-check.png"],["PNG 4x","assets/Icons/4x/icon-check.png"]]],
+      ["icon-check2",[["SVG","assets/Icons/svg/icon-check2.svg"],["PNG 1x","assets/Icons/1x/icon-check2.png"],["PNG 2x","assets/Icons/2x/icon-check2.png"],["PNG 4x","assets/Icons/4x/icon-check2.png"]]],
+      ["icon-chevron-selector-vertical",[["SVG","assets/Icons/svg/icon-chevron-selector-vertical.svg"],["PNG 1x","assets/Icons/1x/icon-chevron-selector-vertical.png"],["PNG 2x","assets/Icons/2x/icon-chevron-selector-vertical.png"],["PNG 4x","assets/Icons/4x/icon-chevron-selector-vertical.png"]]],
+      ["icon-circle-down",[["SVG","assets/Icons/svg/icon-circle-down.svg"],["PNG 1x","assets/Icons/1x/icon-circle-down.png"],["PNG 2x","assets/Icons/2x/icon-circle-down.png"],["PNG 4x","assets/Icons/4x/icon-circle-down.png"]]],
+      ["icon-circle-up",[["SVG","assets/Icons/svg/icon-circle-up.svg"],["PNG 1x","assets/Icons/1x/icon-circle-up.png"],["PNG 2x","assets/Icons/2x/icon-circle-up.png"],["PNG 4x","assets/Icons/4x/icon-circle-up.png"]]],
+      ["icon-close2",[["SVG","assets/Icons/svg/icon-close2.svg"],["PNG 1x","assets/Icons/1x/icon-close2.png"],["PNG 2x","assets/Icons/2x/icon-close2.png"],["PNG 4x","assets/Icons/4x/icon-close2.png"]]],
+      ["icon-code",[["SVG","assets/Icons/svg/icon-code.svg"],["PNG 1x","assets/Icons/1x/icon-code.png"],["PNG 2x","assets/Icons/2x/icon-code.png"],["PNG 4x","assets/Icons/4x/icon-code.png"]]],
+      ["icon-collapse-02",[["SVG","assets/Icons/svg/icon-collapse-02.svg"],["PNG 1x","assets/Icons/1x/icon-collapse-02.png"],["PNG 2x","assets/Icons/2x/icon-collapse-02.png"],["PNG 4x","assets/Icons/4x/icon-collapse-02.png"]]],
+      ["icon-comment",[["SVG","assets/Icons/svg/icon-comment.svg"],["PNG 1x","assets/Icons/1x/icon-comment.png"],["PNG 2x","assets/Icons/2x/icon-comment.png"],["PNG 4x","assets/Icons/4x/icon-comment.png"]]],
+      ["icon-comment_bank",[["SVG","assets/Icons/svg/icon-comment_bank.svg"],["PNG 1x","assets/Icons/1x/icon-comment_bank.png"],["PNG 2x","assets/Icons/2x/icon-comment_bank.png"],["PNG 4x","assets/Icons/4x/icon-comment_bank.png"]]],
+      ["icon-comment_bank-fill",[["SVG","assets/Icons/svg/icon-comment_bank-fill.svg"],["PNG 1x","assets/Icons/1x/icon-comment_bank-fill.png"],["PNG 2x","assets/Icons/2x/icon-comment_bank-fill.png"],["PNG 4x","assets/Icons/4x/icon-comment_bank-fill.png"]]],
+      ["icon-comment-fill",[["SVG","assets/Icons/svg/icon-comment-fill.svg"],["PNG 1x","assets/Icons/1x/icon-comment-fill.png"],["PNG 2x","assets/Icons/2x/icon-comment-fill.png"],["PNG 4x","assets/Icons/4x/icon-comment-fill.png"]]],
+      ["icon-comment-left",[["SVG","assets/Icons/svg/icon-comment-left.svg"],["PNG 1x","assets/Icons/1x/icon-comment-left.png"],["PNG 2x","assets/Icons/2x/icon-comment-left.png"],["PNG 4x","assets/Icons/4x/icon-comment-left.png"]]],
+      ["icon-comment-left-fill",[["SVG","assets/Icons/svg/icon-comment-left-fill.svg"],["PNG 1x","assets/Icons/1x/icon-comment-left-fill.png"],["PNG 2x","assets/Icons/2x/icon-comment-left-fill.png"],["PNG 4x","assets/Icons/4x/icon-comment-left-fill.png"]]],
+      ["icon-comments_disabled",[["SVG","assets/Icons/svg/icon-comments_disabled.svg"],["PNG 1x","assets/Icons/1x/icon-comments_disabled.png"],["PNG 2x","assets/Icons/2x/icon-comments_disabled.png"],["PNG 4x","assets/Icons/4x/icon-comments_disabled.png"]]],
+      ["icon-comments_disabled-fill",[["SVG","assets/Icons/svg/icon-comments_disabled-fill.svg"],["PNG 1x","assets/Icons/1x/icon-comments_disabled-fill.png"],["PNG 2x","assets/Icons/2x/icon-comments_disabled-fill.png"],["PNG 4x","assets/Icons/4x/icon-comments_disabled-fill.png"]]],
+      ["icon-copy",[["SVG","assets/Icons/svg/icon-copy.svg"],["PNG 1x","assets/Icons/1x/icon-copy.png"],["PNG 2x","assets/Icons/2x/icon-copy.png"],["PNG 4x","assets/Icons/4x/icon-copy.png"]]],
+      ["icon-data_object",[["SVG","assets/Icons/svg/icon-data_object.svg"],["PNG 1x","assets/Icons/1x/icon-data_object.png"],["PNG 2x","assets/Icons/2x/icon-data_object.png"],["PNG 4x","assets/Icons/4x/icon-data_object.png"]]],
+      ["icon-delete",[["SVG","assets/Icons/svg/icon-delete.svg"],["PNG 1x","assets/Icons/1x/icon-delete.png"],["PNG 2x","assets/Icons/2x/icon-delete.png"],["PNG 4x","assets/Icons/4x/icon-delete.png"]]],
+      ["icon-delete2",[["SVG","assets/Icons/svg/icon-delete2.svg"],["PNG 1x","assets/Icons/1x/icon-delete2.png"],["PNG 2x","assets/Icons/2x/icon-delete2.png"],["PNG 4x","assets/Icons/4x/icon-delete2.png"]]],
+      ["icon-download",[["SVG","assets/Icons/svg/icon-download.svg"],["PNG 1x","assets/Icons/1x/icon-download.png"],["PNG 2x","assets/Icons/2x/icon-download.png"],["PNG 4x","assets/Icons/4x/icon-download.png"]]],
+      ["icon-edit",[["SVG","assets/Icons/svg/icon-edit.svg"],["PNG 1x","assets/Icons/1x/icon-edit.png"],["PNG 2x","assets/Icons/2x/icon-edit.png"],["PNG 4x","assets/Icons/4x/icon-edit.png"]]],
+      ["icon-edit2",[["SVG","assets/Icons/svg/icon-edit2.svg"],["PNG 1x","assets/Icons/1x/icon-edit2.png"],["PNG 2x","assets/Icons/2x/icon-edit2.png"],["PNG 4x","assets/Icons/4x/icon-edit2.png"]]],
+      ["icon-equalizer",[["SVG","assets/Icons/svg/icon-equalizer.svg"],["PNG 1x","assets/Icons/1x/icon-equalizer.png"],["PNG 2x","assets/Icons/2x/icon-equalizer.png"],["PNG 4x","assets/Icons/4x/icon-equalizer.png"]]],
+      ["icon-expand-02",[["SVG","assets/Icons/svg/icon-expand-02.svg"],["PNG 1x","assets/Icons/1x/icon-expand-02.png"],["PNG 2x","assets/Icons/2x/icon-expand-02.png"],["PNG 4x","assets/Icons/4x/icon-expand-02.png"]]],
+      ["icon-export",[["SVG","assets/Icons/svg/icon-export.svg"],["PNG 1x","assets/Icons/1x/icon-export.png"],["PNG 2x","assets/Icons/2x/icon-export.png"],["PNG 4x","assets/Icons/4x/icon-export.png"]]],
+      ["icon-file_save",[["SVG","assets/Icons/svg/icon-file_save.svg"],["PNG 1x","assets/Icons/1x/icon-file_save.png"],["PNG 2x","assets/Icons/2x/icon-file_save.png"],["PNG 4x","assets/Icons/4x/icon-file_save.png"]]],
+      ["icon-filter",[["SVG","assets/Icons/svg/icon-filter.svg"],["PNG 1x","assets/Icons/1x/icon-filter.png"],["PNG 2x","assets/Icons/2x/icon-filter.png"],["PNG 4x","assets/Icons/4x/icon-filter.png"]]],
+      ["icon-filter_list",[["SVG","assets/Icons/svg/icon-filter_list.svg"],["PNG 1x","assets/Icons/1x/icon-filter_list.png"],["PNG 2x","assets/Icons/2x/icon-filter_list.png"],["PNG 4x","assets/Icons/4x/icon-filter_list.png"]]],
+      ["icon-finance",[["SVG","assets/Icons/svg/icon-finance.svg"],["PNG 1x","assets/Icons/1x/icon-finance.png"],["PNG 2x","assets/Icons/2x/icon-finance.png"],["PNG 4x","assets/Icons/4x/icon-finance.png"]]],
+      ["icon-forum",[["SVG","assets/Icons/svg/icon-forum.svg"],["PNG 1x","assets/Icons/1x/icon-forum.png"],["PNG 2x","assets/Icons/2x/icon-forum.png"],["PNG 4x","assets/Icons/4x/icon-forum.png"]]],
+      ["icon-forum-fill",[["SVG","assets/Icons/svg/icon-forum-fill.svg"],["PNG 1x","assets/Icons/1x/icon-forum-fill.png"],["PNG 2x","assets/Icons/2x/icon-forum-fill.png"],["PNG 4x","assets/Icons/4x/icon-forum-fill.png"]]],
+      ["icon-help",[["SVG","assets/Icons/svg/icon-help.svg"],["PNG 1x","assets/Icons/1x/icon-help.png"],["PNG 2x","assets/Icons/2x/icon-help.png"],["PNG 4x","assets/Icons/4x/icon-help.png"]]],
+      ["icon-help-fill",[["SVG","assets/Icons/svg/icon-help-fill.svg"],["PNG 1x","assets/Icons/1x/icon-help-fill.png"],["PNG 2x","assets/Icons/2x/icon-help-fill.png"],["PNG 4x","assets/Icons/4x/icon-help-fill.png"]]],
+      ["icon-help2",[["SVG","assets/Icons/svg/icon-help2.svg"],["PNG 1x","assets/Icons/1x/icon-help2.png"],["PNG 2x","assets/Icons/2x/icon-help2.png"],["PNG 4x","assets/Icons/4x/icon-help2.png"]]],
+      ["icon-help2-fill",[["SVG","assets/Icons/svg/icon-help2-fill.svg"],["PNG 1x","assets/Icons/1x/icon-help2-fill.png"],["PNG 2x","assets/Icons/2x/icon-help2-fill.png"],["PNG 4x","assets/Icons/4x/icon-help2-fill.png"]]],
+      ["icon-history",[["SVG","assets/Icons/svg/icon-history.svg"],["PNG 1x","assets/Icons/1x/icon-history.png"],["PNG 2x","assets/Icons/2x/icon-history.png"],["PNG 4x","assets/Icons/4x/icon-history.png"]]],
+      ["icon-home",[["SVG","assets/Icons/svg/icon-home.svg"],["PNG 1x","assets/Icons/1x/icon-home.png"],["PNG 2x","assets/Icons/2x/icon-home.png"],["PNG 4x","assets/Icons/4x/icon-home.png"]]],
+      ["icon-images",[["SVG","assets/Icons/svg/icon-images.svg"],["PNG 1x","assets/Icons/1x/icon-images.png"],["PNG 2x","assets/Icons/2x/icon-images.png"],["PNG 4x","assets/Icons/4x/icon-images.png"]]],
+      ["icon-inbox",[["SVG","assets/Icons/svg/icon-inbox.svg"],["PNG 1x","assets/Icons/1x/icon-inbox.png"],["PNG 2x","assets/Icons/2x/icon-inbox.png"],["PNG 4x","assets/Icons/4x/icon-inbox.png"]]],
+      ["icon-inbox_customize",[["SVG","assets/Icons/svg/icon-inbox_customize.svg"],["PNG 1x","assets/Icons/1x/icon-inbox_customize.png"],["PNG 2x","assets/Icons/2x/icon-inbox_customize.png"],["PNG 4x","assets/Icons/4x/icon-inbox_customize.png"]]],
+      ["icon-info",[["SVG","assets/Icons/svg/icon-info.svg"],["PNG 1x","assets/Icons/1x/icon-info.png"],["PNG 2x","assets/Icons/2x/icon-info.png"],["PNG 4x","assets/Icons/4x/icon-info.png"]]],
+      ["icon-info-fill",[["SVG","assets/Icons/svg/icon-info-fill.svg"],["PNG 1x","assets/Icons/1x/icon-info-fill.png"],["PNG 2x","assets/Icons/2x/icon-info-fill.png"],["PNG 4x","assets/Icons/4x/icon-info-fill.png"]]],
+      ["icon-inpin",[["SVG","assets/Icons/svg/icon-inpin.svg"],["PNG 1x","assets/Icons/1x/icon-inpin.png"],["PNG 2x","assets/Icons/2x/icon-inpin.png"],["PNG 4x","assets/Icons/4x/icon-inpin.png"]]],
+      ["icon-insert_chart",[["SVG","assets/Icons/svg/icon-insert_chart.svg"],["PNG 1x","assets/Icons/1x/icon-insert_chart.png"],["PNG 2x","assets/Icons/2x/icon-insert_chart.png"],["PNG 4x","assets/Icons/4x/icon-insert_chart.png"]]],
+      ["icon-language",[["SVG","assets/Icons/svg/icon-language.svg"],["PNG 1x","assets/Icons/1x/icon-language.png"],["PNG 2x","assets/Icons/2x/icon-language.png"],["PNG 4x","assets/Icons/4x/icon-language.png"]]],
+      ["icon-light",[["SVG","assets/Icons/svg/icon-light.svg"],["PNG 1x","assets/Icons/1x/icon-light.png"],["PNG 2x","assets/Icons/2x/icon-light.png"],["PNG 4x","assets/Icons/4x/icon-light.png"]]],
+      ["icon-line_axis",[["SVG","assets/Icons/svg/icon-line_axis.svg"],["PNG 1x","assets/Icons/1x/icon-line_axis.png"],["PNG 2x","assets/Icons/2x/icon-line_axis.png"],["PNG 4x","assets/Icons/4x/icon-line_axis.png"]]],
+      ["icon-link",[["SVG","assets/Icons/svg/icon-link.svg"],["PNG 1x","assets/Icons/1x/icon-link.png"],["PNG 2x","assets/Icons/2x/icon-link.png"],["PNG 4x","assets/Icons/4x/icon-link.png"]]],
+      ["icon-list",[["SVG","assets/Icons/svg/icon-list.svg"],["PNG 1x","assets/Icons/1x/icon-list.png"],["PNG 2x","assets/Icons/2x/icon-list.png"],["PNG 4x","assets/Icons/4x/icon-list.png"]]],
+      ["icon-list-1",[["SVG","assets/Icons/svg/icon-list-1.svg"],["PNG 1x","assets/Icons/1x/icon-list-1.png"],["PNG 2x","assets/Icons/2x/icon-list-1.png"],["PNG 4x","assets/Icons/4x/icon-list-1.png"]]],
+      ["icon-list-view",[["SVG","assets/Icons/svg/icon-list-view.svg"],["PNG 1x","assets/Icons/1x/icon-list-view.png"],["PNG 2x","assets/Icons/2x/icon-list-view.png"],["PNG 4x","assets/Icons/4x/icon-list-view.png"]]],
+      ["icon-lists",[["SVG","assets/Icons/svg/icon-lists.svg"],["PNG 1x","assets/Icons/1x/icon-lists.png"],["PNG 2x","assets/Icons/2x/icon-lists.png"],["PNG 4x","assets/Icons/4x/icon-lists.png"]]],
+      ["icon-loading-inline",[["SVG","assets/Icons/svg/icon-loading-inline.svg"],["PNG 1x","assets/Icons/1x/icon-loading-inline.png"],["PNG 2x","assets/Icons/2x/icon-loading-inline.png"],["PNG 4x","assets/Icons/4x/icon-loading-inline.png"]]],
+      ["icon-location_city",[["SVG","assets/Icons/svg/icon-location_city.svg"],["PNG 1x","assets/Icons/1x/icon-location_city.png"],["PNG 2x","assets/Icons/2x/icon-location_city.png"],["PNG 4x","assets/Icons/4x/icon-location_city.png"]]],
+      ["icon-location_on",[["SVG","assets/Icons/svg/icon-location_on.svg"],["PNG 1x","assets/Icons/1x/icon-location_on.png"],["PNG 2x","assets/Icons/2x/icon-location_on.png"],["PNG 4x","assets/Icons/4x/icon-location_on.png"]]],
+      ["icon-lock",[["SVG","assets/Icons/svg/icon-lock.svg"],["PNG 1x","assets/Icons/1x/icon-lock.png"],["PNG 2x","assets/Icons/2x/icon-lock.png"],["PNG 4x","assets/Icons/4x/icon-lock.png"]]],
+      ["icon-lock-fill",[["SVG","assets/Icons/svg/icon-lock-fill.svg"],["PNG 1x","assets/Icons/1x/icon-lock-fill.png"],["PNG 2x","assets/Icons/2x/icon-lock-fill.png"],["PNG 4x","assets/Icons/4x/icon-lock-fill.png"]]],
+      ["icon-login-password",[["SVG","assets/Icons/svg/icon-login-password.svg"],["PNG 1x","assets/Icons/1x/icon-login-password.png"],["PNG 2x","assets/Icons/2x/icon-login-password.png"],["PNG 4x","assets/Icons/4x/icon-login-password.png"]]],
+      ["icon-mail",[["SVG","assets/Icons/svg/icon-mail.svg"],["PNG 1x","assets/Icons/1x/icon-mail.png"],["PNG 2x","assets/Icons/2x/icon-mail.png"],["PNG 4x","assets/Icons/4x/icon-mail.png"]]],
+      ["icon-mail-fill",[["SVG","assets/Icons/svg/icon-mail-fill.svg"],["PNG 1x","assets/Icons/1x/icon-mail-fill.png"],["PNG 2x","assets/Icons/2x/icon-mail-fill.png"],["PNG 4x","assets/Icons/4x/icon-mail-fill.png"]]],
+      ["icon-mail-setting",[["SVG","assets/Icons/svg/icon-mail-setting.svg"],["PNG 1x","assets/Icons/1x/icon-mail-setting.png"],["PNG 2x","assets/Icons/2x/icon-mail-setting.png"],["PNG 4x","assets/Icons/4x/icon-mail-setting.png"]]],
+      ["icon-manage_accounts",[["SVG","assets/Icons/svg/icon-manage_accounts.svg"],["PNG 1x","assets/Icons/1x/icon-manage_accounts.png"],["PNG 2x","assets/Icons/2x/icon-manage_accounts.png"],["PNG 4x","assets/Icons/4x/icon-manage_accounts.png"]]],
+      ["icon-map",[["SVG","assets/Icons/svg/icon-map.svg"],["PNG 1x","assets/Icons/1x/icon-map.png"],["PNG 2x","assets/Icons/2x/icon-map.png"],["PNG 4x","assets/Icons/4x/icon-map.png"]]],
+      ["icon-mark_as_unread",[["SVG","assets/Icons/svg/icon-mark_as_unread.svg"],["PNG 1x","assets/Icons/1x/icon-mark_as_unread.png"],["PNG 2x","assets/Icons/2x/icon-mark_as_unread.png"],["PNG 4x","assets/Icons/4x/icon-mark_as_unread.png"]]],
+      ["icon-menu",[["SVG","assets/Icons/svg/icon-menu.svg"],["PNG 1x","assets/Icons/1x/icon-menu.png"],["PNG 2x","assets/Icons/2x/icon-menu.png"],["PNG 4x","assets/Icons/4x/icon-menu.png"]]],
+      ["icon-message",[["SVG","assets/Icons/svg/icon-message.svg"],["PNG 1x","assets/Icons/1x/icon-message.png"],["PNG 2x","assets/Icons/2x/icon-message.png"],["PNG 4x","assets/Icons/4x/icon-message.png"]]],
+      ["icon-mic",[["SVG","assets/Icons/svg/icon-mic.svg"],["PNG 1x","assets/Icons/1x/icon-mic.png"],["PNG 2x","assets/Icons/2x/icon-mic.png"],["PNG 4x","assets/Icons/4x/icon-mic.png"]]],
+      ["icon-mic-ai",[["SVG","assets/Icons/svg/icon-mic-ai.svg"],["PNG 1x","assets/Icons/1x/icon-mic-ai.png"],["PNG 2x","assets/Icons/2x/icon-mic-ai.png"],["PNG 4x","assets/Icons/4x/icon-mic-ai.png"]]],
+      ["icon-minus",[["SVG","assets/Icons/svg/icon-minus.svg"],["PNG 1x","assets/Icons/1x/icon-minus.png"],["PNG 2x","assets/Icons/2x/icon-minus.png"],["PNG 4x","assets/Icons/4x/icon-minus.png"]]],
+      ["icon-mode_comment",[["SVG","assets/Icons/svg/icon-mode_comment.svg"],["PNG 1x","assets/Icons/1x/icon-mode_comment.png"],["PNG 2x","assets/Icons/2x/icon-mode_comment.png"],["PNG 4x","assets/Icons/4x/icon-mode_comment.png"]]],
+      ["icon-mode_comment-fill",[["SVG","assets/Icons/svg/icon-mode_comment-fill.svg"],["PNG 1x","assets/Icons/1x/icon-mode_comment-fill.png"],["PNG 2x","assets/Icons/2x/icon-mode_comment-fill.png"],["PNG 4x","assets/Icons/4x/icon-mode_comment-fill.png"]]],
+      ["icon-money",[["SVG","assets/Icons/svg/icon-money.svg"],["PNG 1x","assets/Icons/1x/icon-money.png"],["PNG 2x","assets/Icons/2x/icon-money.png"],["PNG 4x","assets/Icons/4x/icon-money.png"]]],
+      ["icon-monitoring",[["SVG","assets/Icons/svg/icon-monitoring.svg"],["PNG 1x","assets/Icons/1x/icon-monitoring.png"],["PNG 2x","assets/Icons/2x/icon-monitoring.png"],["PNG 4x","assets/Icons/4x/icon-monitoring.png"]]],
+      ["icon-more",[["SVG","assets/Icons/svg/icon-more.svg"],["PNG 1x","assets/Icons/1x/icon-more.png"],["PNG 2x","assets/Icons/2x/icon-more.png"],["PNG 4x","assets/Icons/4x/icon-more.png"]]],
+      ["icon-note",[["SVG","assets/Icons/svg/icon-note.svg"],["PNG 1x","assets/Icons/1x/icon-note.png"],["PNG 2x","assets/Icons/2x/icon-note.png"],["PNG 4x","assets/Icons/4x/icon-note.png"]]],
+      ["icon-noti",[["SVG","assets/Icons/svg/icon-noti.svg"],["PNG 1x","assets/Icons/1x/icon-noti.png"],["PNG 2x","assets/Icons/2x/icon-noti.png"],["PNG 4x","assets/Icons/4x/icon-noti.png"]]],
+      ["icon-notifications",[["SVG","assets/Icons/svg/icon-notifications.svg"],["PNG 1x","assets/Icons/1x/icon-notifications.png"],["PNG 2x","assets/Icons/2x/icon-notifications.png"],["PNG 4x","assets/Icons/4x/icon-notifications.png"]]],
+      ["icon-notifications-fill",[["SVG","assets/Icons/svg/icon-notifications-fill.svg"],["PNG 1x","assets/Icons/1x/icon-notifications-fill.png"],["PNG 2x","assets/Icons/2x/icon-notifications-fill.png"],["PNG 4x","assets/Icons/4x/icon-notifications-fill.png"]]],
+      ["icon-package",[["SVG","assets/Icons/svg/icon-package.svg"],["PNG 1x","assets/Icons/1x/icon-package.png"],["PNG 2x","assets/Icons/2x/icon-package.png"],["PNG 4x","assets/Icons/4x/icon-package.png"]]],
+      ["icon-password",[["SVG","assets/Icons/svg/icon-password.svg"],["PNG 1x","assets/Icons/1x/icon-password.png"],["PNG 2x","assets/Icons/2x/icon-password.png"],["PNG 4x","assets/Icons/4x/icon-password.png"]]],
+      ["icon-permission",[["SVG","assets/Icons/svg/icon-permission.svg"],["PNG 1x","assets/Icons/1x/icon-permission.png"],["PNG 2x","assets/Icons/2x/icon-permission.png"],["PNG 4x","assets/Icons/4x/icon-permission.png"]]],
+      ["icon-phone",[["SVG","assets/Icons/svg/icon-phone.svg"],["PNG 1x","assets/Icons/1x/icon-phone.png"],["PNG 2x","assets/Icons/2x/icon-phone.png"],["PNG 4x","assets/Icons/4x/icon-phone.png"]]],
+      ["icon-phone-1",[["SVG","assets/Icons/svg/icon-phone-1.svg"],["PNG 1x","assets/Icons/1x/icon-phone-1.png"],["PNG 2x","assets/Icons/2x/icon-phone-1.png"],["PNG 4x","assets/Icons/4x/icon-phone-1.png"]]],
+      ["icon-phone-ai",[["SVG","assets/Icons/svg/icon-phone-ai.svg"],["PNG 1x","assets/Icons/1x/icon-phone-ai.png"],["PNG 2x","assets/Icons/2x/icon-phone-ai.png"],["PNG 4x","assets/Icons/4x/icon-phone-ai.png"]]],
+      ["icon-phone-outline",[["SVG","assets/Icons/svg/icon-phone-outline.svg"],["PNG 1x","assets/Icons/1x/icon-phone-outline.png"],["PNG 2x","assets/Icons/2x/icon-phone-outline.png"],["PNG 4x","assets/Icons/4x/icon-phone-outline.png"]]],
+      ["icon-phone2",[["SVG","assets/Icons/svg/icon-phone2.svg"],["PNG 1x","assets/Icons/1x/icon-phone2.png"],["PNG 2x","assets/Icons/2x/icon-phone2.png"],["PNG 4x","assets/Icons/4x/icon-phone2.png"]]],
+      ["icon-pie_chart",[["SVG","assets/Icons/svg/icon-pie_chart.svg"],["PNG 1x","assets/Icons/1x/icon-pie_chart.png"],["PNG 2x","assets/Icons/2x/icon-pie_chart.png"],["PNG 4x","assets/Icons/4x/icon-pie_chart.png"]]],
+      ["icon-pin",[["SVG","assets/Icons/svg/icon-pin.svg"],["PNG 1x","assets/Icons/1x/icon-pin.png"],["PNG 2x","assets/Icons/2x/icon-pin.png"],["PNG 4x","assets/Icons/4x/icon-pin.png"]]],
+      ["icon-placeholder",[["SVG","assets/Icons/svg/icon-placeholder.svg"],["PNG 1x","assets/Icons/1x/icon-placeholder.png"],["PNG 2x","assets/Icons/2x/icon-placeholder.png"],["PNG 4x","assets/Icons/4x/icon-placeholder.png"]]],
+      ["icon-plus",[["SVG","assets/Icons/svg/icon-plus.svg"],["PNG 1x","assets/Icons/1x/icon-plus.png"],["PNG 2x","assets/Icons/2x/icon-plus.png"],["PNG 4x","assets/Icons/4x/icon-plus.png"]]],
+      ["icon-profile",[["SVG","assets/Icons/svg/icon-profile.svg"],["PNG 1x","assets/Icons/1x/icon-profile.png"],["PNG 2x","assets/Icons/2x/icon-profile.png"],["PNG 4x","assets/Icons/4x/icon-profile.png"]]],
+      ["icon-reply",[["SVG","assets/Icons/svg/icon-reply.svg"],["PNG 1x","assets/Icons/1x/icon-reply.png"],["PNG 2x","assets/Icons/2x/icon-reply.png"],["PNG 4x","assets/Icons/4x/icon-reply.png"]]],
+      ["icon-schedule",[["SVG","assets/Icons/svg/icon-schedule.svg"],["PNG 1x","assets/Icons/1x/icon-schedule.png"],["PNG 2x","assets/Icons/2x/icon-schedule.png"],["PNG 4x","assets/Icons/4x/icon-schedule.png"]]],
+      ["icon-search",[["SVG","assets/Icons/svg/icon-search.svg"],["PNG 1x","assets/Icons/1x/icon-search.png"],["PNG 2x","assets/Icons/2x/icon-search.png"],["PNG 4x","assets/Icons/4x/icon-search.png"]]],
+      ["icon-search-02",[["SVG","assets/Icons/svg/icon-search-02.svg"],["PNG 1x","assets/Icons/1x/icon-search-02.png"],["PNG 2x","assets/Icons/2x/icon-search-02.png"],["PNG 4x","assets/Icons/4x/icon-search-02.png"]]],
+      ["icon-settings",[["SVG","assets/Icons/svg/icon-settings.svg"],["PNG 1x","assets/Icons/1x/icon-settings.png"],["PNG 2x","assets/Icons/2x/icon-settings.png"],["PNG 4x","assets/Icons/4x/icon-settings.png"]]],
+      ["icon-settings-fill",[["SVG","assets/Icons/svg/icon-settings-fill.svg"],["PNG 1x","assets/Icons/1x/icon-settings-fill.png"],["PNG 2x","assets/Icons/2x/icon-settings-fill.png"],["PNG 4x","assets/Icons/4x/icon-settings-fill.png"]]],
+      ["icon-sms",[["SVG","assets/Icons/svg/icon-sms.svg"],["PNG 1x","assets/Icons/1x/icon-sms.png"],["PNG 2x","assets/Icons/2x/icon-sms.png"],["PNG 4x","assets/Icons/4x/icon-sms.png"]]],
+      ["icon-sms-fill",[["SVG","assets/Icons/svg/icon-sms-fill.svg"],["PNG 1x","assets/Icons/1x/icon-sms-fill.png"],["PNG 2x","assets/Icons/2x/icon-sms-fill.png"],["PNG 4x","assets/Icons/4x/icon-sms-fill.png"]]],
+      ["icon-success",[["SVG","assets/Icons/svg/icon-success.svg"],["PNG 1x","assets/Icons/1x/icon-success.png"],["PNG 2x","assets/Icons/2x/icon-success.png"],["PNG 4x","assets/Icons/4x/icon-success.png"]]],
+      ["icon-table_chart_view",[["SVG","assets/Icons/svg/icon-table_chart_view.svg"],["PNG 1x","assets/Icons/1x/icon-table_chart_view.png"],["PNG 2x","assets/Icons/2x/icon-table_chart_view.png"],["PNG 4x","assets/Icons/4x/icon-table_chart_view.png"]]],
+      ["icon-tag",[["SVG","assets/Icons/svg/icon-tag.svg"],["PNG 1x","assets/Icons/1x/icon-tag.png"],["PNG 2x","assets/Icons/2x/icon-tag.png"],["PNG 4x","assets/Icons/4x/icon-tag.png"]]],
+      ["icon-target",[["SVG","assets/Icons/svg/icon-target.svg"],["PNG 1x","assets/Icons/1x/icon-target.png"],["PNG 2x","assets/Icons/2x/icon-target.png"],["PNG 4x","assets/Icons/4x/icon-target.png"]]],
+      ["icon-team",[["SVG","assets/Icons/svg/icon-team.svg"],["PNG 1x","assets/Icons/1x/icon-team.png"],["PNG 2x","assets/Icons/2x/icon-team.png"],["PNG 4x","assets/Icons/4x/icon-team.png"]]],
+      ["icon-team-fill",[["SVG","assets/Icons/svg/icon-team-fill.svg"],["PNG 1x","assets/Icons/1x/icon-team-fill.png"],["PNG 2x","assets/Icons/2x/icon-team-fill.png"],["PNG 4x","assets/Icons/4x/icon-team-fill.png"]]],
+      ["icon-ticket",[["SVG","assets/Icons/svg/icon-ticket.svg"],["PNG 1x","assets/Icons/1x/icon-ticket.png"],["PNG 2x","assets/Icons/2x/icon-ticket.png"],["PNG 4x","assets/Icons/4x/icon-ticket.png"]]],
+      ["icon-trending_up",[["SVG","assets/Icons/svg/icon-trending_up.svg"],["PNG 1x","assets/Icons/1x/icon-trending_up.png"],["PNG 2x","assets/Icons/2x/icon-trending_up.png"],["PNG 4x","assets/Icons/4x/icon-trending_up.png"]]],
+      ["icon-tune",[["SVG","assets/Icons/svg/icon-tune.svg"],["PNG 1x","assets/Icons/1x/icon-tune.png"],["PNG 2x","assets/Icons/2x/icon-tune.png"],["PNG 4x","assets/Icons/4x/icon-tune.png"]]],
+      ["icon-user-01",[["SVG","assets/Icons/svg/icon-user-01.svg"],["PNG 1x","assets/Icons/1x/icon-user-01.png"],["PNG 2x","assets/Icons/2x/icon-user-01.png"],["PNG 4x","assets/Icons/4x/icon-user-01.png"]]],
+      ["icon-user-01-fill",[["SVG","assets/Icons/svg/icon-user-01-fill.svg"],["PNG 1x","assets/Icons/1x/icon-user-01-fill.png"],["PNG 2x","assets/Icons/2x/icon-user-01-fill.png"],["PNG 4x","assets/Icons/4x/icon-user-01-fill.png"]]],
+      ["icon-user-list",[["SVG","assets/Icons/svg/icon-user-list.svg"],["PNG 1x","assets/Icons/1x/icon-user-list.png"],["PNG 2x","assets/Icons/2x/icon-user-list.png"],["PNG 4x","assets/Icons/4x/icon-user-list.png"]]],
+      ["icon-visibility",[["SVG","assets/Icons/svg/icon-visibility.svg"],["PNG 1x","assets/Icons/1x/icon-visibility.png"],["PNG 2x","assets/Icons/2x/icon-visibility.png"],["PNG 4x","assets/Icons/4x/icon-visibility.png"]]],
+      ["icon-visibility_off",[["SVG","assets/Icons/svg/icon-visibility_off.svg"],["PNG 1x","assets/Icons/1x/icon-visibility_off.png"],["PNG 2x","assets/Icons/2x/icon-visibility_off.png"],["PNG 4x","assets/Icons/4x/icon-visibility_off.png"]]],
+      ["icon-visibility_off-fill",[["SVG","assets/Icons/svg/icon-visibility_off-fill.svg"],["PNG 1x","assets/Icons/1x/icon-visibility_off-fill.png"],["PNG 2x","assets/Icons/2x/icon-visibility_off-fill.png"],["PNG 4x","assets/Icons/4x/icon-visibility_off-fill.png"]]],
+      ["icon-visibility-fill",[["SVG","assets/Icons/svg/icon-visibility-fill.svg"],["PNG 1x","assets/Icons/1x/icon-visibility-fill.png"],["PNG 2x","assets/Icons/2x/icon-visibility-fill.png"],["PNG 4x","assets/Icons/4x/icon-visibility-fill.png"]]],
+      ["icon-work",[["SVG","assets/Icons/svg/icon-work.svg"],["PNG 1x","assets/Icons/1x/icon-work.png"],["PNG 2x","assets/Icons/2x/icon-work.png"],["PNG 4x","assets/Icons/4x/icon-work.png"]]],
+      ["iconb-chat",[["SVG","assets/Icons/svg/iconb-chat.svg"],["PNG 1x","assets/Icons/1x/iconb-chat.png"],["PNG 2x","assets/Icons/2x/iconb-chat.png"],["PNG 4x","assets/Icons/4x/iconb-chat.png"]]],
+      ["iocn-app",[["SVG","assets/Icons/svg/iocn-app.svg"],["PNG 1x","assets/Icons/1x/iocn-app.png"],["PNG 2x","assets/Icons/2x/iocn-app.png"],["PNG 4x","assets/Icons/4x/iocn-app.png"]]],
+      ["Read",[["SVG","assets/Icons/svg/Read.svg"],["PNG 1x","assets/Icons/1x/Read.png"],["PNG 2x","assets/Icons/2x/Read.png"],["PNG 4x","assets/Icons/4x/Read.png"]]],
+      ["social/75",[["SVG","assets/Icons/svg/social/75.svg"],["PNG 2x","assets/Icons/2x/social/75.png"],["PNG 4x","assets/Icons/4x/social/75.png"]]],
+      ["social/fb",[["SVG","assets/Icons/svg/social/fb.svg"],["PNG 2x","assets/Icons/2x/social/fb.png"],["PNG 4x","assets/Icons/4x/social/fb.png"]]],
+      ["social/ig",[["SVG","assets/Icons/svg/social/ig.svg"],["PNG 2x","assets/Icons/2x/social/ig.png"],["PNG 4x","assets/Icons/4x/social/ig.png"]]],
+      ["social/line",[["SVG","assets/Icons/svg/social/line.svg"],["PNG 2x","assets/Icons/2x/social/line.png"],["PNG 4x","assets/Icons/4x/social/line.png"]]],
+      ["social/shopee",[["SVG","assets/Icons/svg/social/shopee.svg"],["PNG 2x","assets/Icons/2x/social/shopee.png"],["PNG 4x","assets/Icons/4x/social/shopee.png"]]],
+      ["social/shopee-1",[["SVG","assets/Icons/svg/social/shopee-1.svg"],["PNG 2x","assets/Icons/2x/social/shopee-1.png"],["PNG 4x","assets/Icons/4x/social/shopee-1.png"]]],
+      ["social/TT",[["SVG","assets/Icons/svg/social/TT.svg"],["PNG 2x","assets/Icons/2x/social/TT.png"],["PNG 4x","assets/Icons/4x/social/TT.png"]]],
+      ["social/x",[["SVG","assets/Icons/svg/social/x.svg"],["PNG 2x","assets/Icons/2x/social/x.png"],["PNG 4x","assets/Icons/4x/social/x.png"]]],
+      ["social/youtube",[["SVG","assets/Icons/svg/social/youtube.svg"],["PNG 2x","assets/Icons/2x/social/youtube.png"],["PNG 4x","assets/Icons/4x/social/youtube.png"]]],
+      ["star",[["SVG","assets/Icons/svg/star.svg"],["PNG 1x","assets/Icons/1x/star.png"],["PNG 2x","assets/Icons/2x/star.png"],["PNG 4x","assets/Icons/4x/star.png"]]],
+      ["stars-circle",[["SVG","assets/Icons/svg/stars-circle.svg"],["PNG 1x","assets/Icons/1x/stars-circle.png"],["PNG 2x","assets/Icons/2x/stars-circle.png"],["PNG 4x","assets/Icons/4x/stars-circle.png"]]],
+      ["verified",[["SVG","assets/Icons/svg/verified.svg"],["PNG 1x","assets/Icons/1x/verified.png"],["PNG 2x","assets/Icons/2x/verified.png"],["PNG 4x","assets/Icons/4x/verified.png"]]]
+    ];
+
+    const effectStyles = [
+      ["shadow-xs", "Shadow", "0 1px 2px rgba(10, 13, 18, 0.05)", "Subtle depth for compact cards"],
+      ["shadow-sm", "Shadow", "0 1px 2px rgba(10, 13, 18, 0.06), 0 1px 3px rgba(10, 13, 18, 0.10)", "Default low elevation"],
+      ["shadow-md", "Shadow", "0 2px 4px -2px rgba(10, 13, 18, 0.06), 0 4px 8px -2px rgba(10, 13, 18, 0.10)", "Raised cards and popovers"],
+      ["shadow-lg", "Shadow", "0 4px 6px -2px rgba(10, 13, 18, 0.03), 0 12px 16px -4px rgba(10, 13, 18, 0.08)", "Menus, drawers, larger overlays"],
+      ["shadow-xl", "Shadow", "0 8px 8px -4px rgba(10, 13, 18, 0.03), 0 20px 24px -4px rgba(10, 13, 18, 0.08)", "Modal and high emphasis surface"],
+      ["shadow-2xl", "Shadow", "0 24px 48px -12px rgba(10, 13, 18, 0.18)", "Large floating surface"],
+      ["shadow-3xl", "Shadow", "0 32px 64px -12px rgba(10, 13, 18, 0.14)", "Hero or rare presentation use"],
+      ["blur-sm", "Blur", "8px", "Background blur"],
+      ["blur-md", "Blur", "16px", "Background blur"],
+      ["blur-lg", "Blur", "24px", "Background blur"],
+      ["blur-xl", "Blur", "40px", "Background blur"]
+    ];
+
+    const palettes = document.getElementById("palettes");
+    const familyFilter = document.getElementById("familyFilter");
+    const search = document.getElementById("search");
+    const semanticRows = document.getElementById("semanticRows");
+    const typeRows = document.getElementById("typeRows");
+    const typeFilter = document.getElementById("typeFilter");
+    const logoGrid = document.getElementById("logoGrid");
+    const sharedIconGrid = document.getElementById("sharedIconGrid");
+    const iconSearch = document.getElementById("iconSearch");
+    const iconCategoryFilter = document.getElementById("iconCategoryFilter");
+    const clearIconSearch = document.getElementById("clearIconSearch");
+    const effectGrid = document.getElementById("effectGrid");
+
+    function luminance(hex) {
+      const rgb = hex.replace("#", "").match(/.{2}/g).map(v => parseInt(v, 16) / 255);
+      const linear = rgb.map(v => v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4));
+      return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
+    }
+
+    function slugify(value) {
+      return String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    }
+
+    function renderPalettes() {
+      const q = search.value.trim().toLowerCase();
+      const selected = familyFilter.value;
+      palettes.innerHTML = "";
+      Object.entries(families)
+        .filter(([name, values]) => selected === "all" || name === selected)
+        .filter(([name, values]) => !q || name.toLowerCase().includes(q) || values.some(hex => hex.toLowerCase().includes(q)))
+        .forEach(([name, values]) => {
+          const card = document.createElement("article");
+          card.className = "palette";
+          card.id = `color-${slugify(name)}`;
+          const title = document.createElement("div");
+          title.className = "palette-title";
+          title.innerHTML = `<strong>${name}</strong><span>Global/Color/${name}/{scale}</span>`;
+          const grid = document.createElement("div");
+          grid.className = "swatches";
+          values.forEach((hex, index) => {
+            const swatch = document.createElement("button");
+            swatch.className = "swatch";
+            swatch.type = "button";
+            swatch.dataset.hex = hex;
+            swatch.setAttribute("aria-label", `Copy ${name} ${scales[index]} ${hex}`);
+            swatch.style.setProperty("--swatch", hex);
+            swatch.style.setProperty("--swatch-text", luminance(hex) > 0.52 ? getComputedStyle(document.documentElement).getPropertyValue("--ink").trim() : getComputedStyle(document.documentElement).getPropertyValue("--on-brand").trim());
+            swatch.innerHTML = `<b>${scales[index]}</b><small>${hex}</small>`;
+            grid.appendChild(swatch);
+          });
+          card.append(title, grid);
+          palettes.appendChild(card);
+        });
+    }
+
+    function renderSemantics() {
+      semanticRows.innerHTML = semanticTokens.map(([token, group, value, scope]) => {
+        const visual = value === "alias"
+          ? `<span class="chip">Alias</span>`
+          : `<span class="dot" style="--dot:${value}"></span>${value}`;
+        return `<tr>
+          <td><code>${token}</code></td>
+          <td>${group}</td>
+          <td>${visual}</td>
+          <td>${scope}</td>
+          <td>${value === "alias" ? "Needs alias resolution" : "Ready"}</td>
+        </tr>`;
+      }).join("");
+    }
+
+    function renderTypography() {
+      const selected = typeFilter.value;
+      typeRows.innerHTML = typography
+        .filter(row => selected === "all" || row[1] === selected)
+        .map(([style, group, font, size, lineHeight, tracking, weights]) => `<tr>
+          <td><code>${style}</code></td>
+          <td>${font}</td>
+          <td>${size}px</td>
+          <td>${lineHeight}px</td>
+          <td>${tracking}</td>
+          <td>${weights}</td>
+        </tr>`)
+        .join("");
+    }
+
+    function renderLogos() {
+      const groups = logoAssets.reduce((map, asset) => {
+        const group = asset[1];
+        if (!map.has(group)) map.set(group, []);
+        map.get(group).push(asset);
+        return map;
+      }, new Map());
+
+      logoGrid.innerHTML = [...groups.entries()].map(([group, assets]) => `
+        <div class="logo-group" id="logos-${slugify(group)}">
+          <h4>${group}</h4>
+          <div class="asset-grid">
+            ${assets.map(([name, assetGroup, svgBase, pngBase = svgBase]) => {
+              const src = `assets/LOGO-PRODUCT/SVG/${svgBase}.svg`;
+              const png1x = `assets/LOGO-PRODUCT/PNG/1x/${pngBase}.png`;
+              const png2x = `assets/LOGO-PRODUCT/PNG/2x/${pngBase}.png`;
+              const png4x = `assets/LOGO-PRODUCT/PNG/4x/${pngBase}.png`;
+              const previewClasses = ["asset-preview"];
+              if (assetGroup === "Main Logo") previewClasses.push("main-logo");
+              if (name.toLowerCase().includes("white")) previewClasses.push("dark");
+              return `<article class="asset-card">
+        <div class="${previewClasses.join(" ")}"><img src="${src}" alt="${name}"></div>
+        <h4>${name}</h4>
+        <div class="download-row" aria-label="Download ${name}">
+          <a class="download-link" href="${src}" download="${svgBase}.svg" target="_blank" rel="noopener">SVG</a>
+          <a class="download-link" href="${png1x}" download="${pngBase}-1x.png" target="_blank" rel="noopener">PNG 1x</a>
+          <a class="download-link" href="${png2x}" download="${pngBase}-2x.png" target="_blank" rel="noopener">PNG 2x</a>
+          <a class="download-link" href="${png4x}" download="${pngBase}-4x.png" target="_blank" rel="noopener">PNG 4x</a>
+        </div>
+      </article>`;
+            }).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    const sharedIconCategoryOrder = [
+      "Navigation & Direction",
+      "Actions & Editing",
+      "Communication",
+      "User & Access",
+      "Data & Analytics",
+      "Status & Feedback",
+      "Time & Location",
+      "Product Reference",
+      "Social & Channels",
+      "General"
+    ];
+
+    const pageNav = document.getElementById("pageNav");
+    const subNav = document.getElementById("subNav");
+    const icon = '<svg viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="11" height="11" rx="2"/></svg>';
+    const navIcons = {
+      overview: '<svg viewBox="0 0 16 16"><path d="M2.5 7.5 8 2.5l5.5 5V13a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1Z"/></svg>',
+      color: '<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/></svg>',
+      typography: '<svg viewBox="0 0 16 16"><path d="M3 4h10M8 4v8M5.5 12.5h5"/></svg>',
+      buttons: '<svg viewBox="0 0 16 16"><rect x="2.5" y="5" width="11" height="6" rx="2"/></svg>',
+      logos: '<svg viewBox="0 0 16 16"><rect x="2.5" y="3.5" width="11" height="9" rx="1.5"/><path d="m4.5 10.5 2-2 2 2 2.5-3 2 3"/></svg>',
+      "shared-icons": '<svg viewBox="0 0 16 16"><path d="M3 3.5h4v4H3zM9 3.5h4v4H9zM3 9.5h4v4H3zM9 9.5h4v4H9z"/></svg>',
+      effects: '<svg viewBox="0 0 16 16"><path d="M3 11.5 8 3.5l5 8Z"/></svg>',
+      semantic: '<svg viewBox="0 0 16 16"><path d="M3.5 8h9M8 3.5v9"/></svg>',
+      structure: '<svg viewBox="0 0 16 16"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg>',
+      next: '<svg viewBox="0 0 16 16"><path d="M3.5 4.5h9M3.5 8h9M3.5 11.5h6"/></svg>'
+    };
+    const navGroups = [
+      { label: "Foundation", ids: ["overview", "color", "typography", "effects", "semantic"] },
+      { label: "Components", ids: ["buttons"] },
+      { label: "Assets", ids: ["logos", "shared-icons"] },
+      { label: "Guidelines", ids: ["structure", "next"] }
+    ];
+    const pageMenus = {
+      overview: {
+        title: "Overview",
+        items: [
+          ["overview-theme", "Theme"],
+          ["sceneMain", "Dashboard"],
+          ["overview-status", "Status"],
+          ["overview-dropdown", "Dropdown"],
+          ["overview-modal", "Modal"],
+          ["overview-verify", "Verify"],
+          ["overview-account", "Create account"]
+        ]
+      },
+      color: {
+        title: "Color",
+        items: Object.keys(families).map(name => [`color-${slugify(name)}`, name])
+      },
+      typography: {
+        title: "Typography",
+        items: [
+          ["type-note", "Font stack"],
+          ["type-table", "Type scale"]
+        ]
+      },
+      buttons: {
+        title: "Buttons",
+        items: [
+          ["buttons-variants", "Styles"],
+          ["buttons-content", "Content"],
+          ["buttons-states", "States"],
+          ["buttons-tones", "Tones"],
+          ["buttons-sizes", "Sizes"],
+          ["buttons-spec", "Specs"],
+          ["buttons-props", "Properties"],
+          ["buttons-code", "Usage"]
+        ]
+      },
+      logos: {
+        title: "Product Icons",
+        items: [...new Set(logoAssets.map(asset => asset[1]))].map(group => [`logos-${slugify(group)}`, group])
+      },
+      "shared-icons": {
+        title: "Shared Icons",
+        items: sharedIconCategoryOrder.map(category => [`icon-cat-${slugify(category)}`, category])
+      },
+      effects: {
+        title: "Effects",
+        items: [
+          ...effectStyles.map(([name]) => [`effect-${slugify(name)}`, name]),
+          ["effects-spec", "Status"]
+        ]
+      },
+      semantic: {
+        title: "Semantic",
+        items: [
+          ["semantic-note", "Alias note"],
+          ["semantic-table", "Token table"]
+        ]
+      },
+      structure: {
+        title: "Structure",
+        items: [
+          ["structure-foundation", "Foundation"],
+          ["structure-assets", "Assets"],
+          ["structure-components", "Components"],
+          ["structure-patterns", "Patterns"],
+          ["structure-guidelines", "Guidelines"],
+          ["structure-changelog", "Changelog"]
+        ]
+      },
+      next: {
+        title: "Next",
+        items: [["next-tasks", "Cleanup tasks"]]
+      }
+    };
+
+    function groupForPage(pageId) {
+      return navGroups.find(group => group.ids.includes(pageId))?.label || "Foundation";
+    }
+
+    function renderPageNav(pageId, activeTarget) {
+      pageNav.innerHTML = navGroups.map(group => `
+        <p class="nav-group">${group.label}</p>
+        ${group.ids.map(id => {
+          const menu = pageMenus[id];
+          return `<a class="nav-l1${id === pageId ? " is-current" : ""}" href="#${id}" data-page="${id}" title="${menu.title}">
+            <span class="nav-ico">${navIcons[id] || icon}</span>
+            <span>${menu.title}</span>
+          </a>`;
+        }).join("")}
+      `).join("");
+
+      const menu = pageMenus[pageId];
+      document.getElementById("subNavTitle").textContent = menu.title;
+      document.getElementById("contentBarTitle").textContent = menu.title;
+      document.getElementById("contentCrumb").textContent = groupForPage(pageId);
+      subNav.innerHTML = menu.items.map(([targetId, label]) =>
+        `<a class="${activeTarget === targetId ? "active" : ""}" href="#${targetId}" data-page="${pageId}" data-target="${targetId}">${label}</a>`
+      ).join("");
+    }
+
+    function pageForTarget(id) {
+      if (pageMenus[id]) return id;
+      return Object.keys(pageMenus).find(pageId => pageMenus[pageId].items.some(([itemId]) => itemId === id)) || "overview";
+    }
+
+    function showPage(pageId, targetId) {
+      document.querySelectorAll(".page").forEach(page => {
+        page.classList.toggle("is-active", page.id === pageId);
+      });
+      if (pageId === "shared-icons" && targetId && targetId.startsWith("icon-cat-")) {
+        const category = pageMenus["shared-icons"].items.find(([id]) => id === targetId)?.[1];
+        if (category) {
+          iconCategoryFilter.value = category;
+          renderSharedIcons();
+        }
+      }
+      renderPageNav(pageId, targetId);
+      history.replaceState(null, "", `#${targetId || pageId}`);
+      if (targetId) {
+        document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    function applyHash() {
+      const id = location.hash.replace("#", "") || "overview";
+      const pageId = pageForTarget(id);
+      showPage(pageId, pageMenus[id] ? null : id);
+    }
+
+    function getSharedIconCategory(name) {
+      const key = name.toLowerCase();
+      if (key.startsWith("social/")) return "Social & Channels";
+      if (/^(r-|icon-r-)|iocn-app/.test(key)) return "Product Reference";
+      if (/arrow|chevron|circle-(up|down)|collapse|expand|home|menu|list|inbox/.test(key)) return "Navigation & Direction";
+      if (/add|plus|minus|delete|edit|copy|download|export|attach|reply|archive|save|assign|block|build|filter|tune|equalizer|pin|link|insert/.test(key)) return "Actions & Editing";
+      if (/chat|comment|forum|message|mail|sms|phone|mic|callnote/.test(key)) return "Communication";
+      if (/user|team|profile|account|lock|password|permission|visibility|login/.test(key)) return "User & Access";
+      if (/analytic|finance|money|monitoring|chart|table|data|axis|trend|package/.test(key)) return "Data & Analytics";
+      if (/calendar|schedule|location|map|city|language/.test(key)) return "Time & Location";
+      if (/check|success|info|help|noti|loading|verified|star|target|placeholder|light|hourglass|read/.test(key)) return "Status & Feedback";
+      return "General";
+    }
+
+    function renderSharedIconCard(name, files) {
+        const preview = files.find(([format]) => format === "SVG") || files[0];
+        const [, previewSrc] = preview;
+        const buttons = files.map(([format, src]) => {
+          const filename = src.split("/").pop();
+          return `<a class="download-link" href="${src}" download="${filename}" target="_blank" rel="noopener">${format}</a>`;
+        }).join("");
+        return `<article class="asset-card compact">
+        <div class="asset-preview"><img src="${previewSrc}" alt="${name}"></div>
+        <div>
+          <h4 title="${name}">${name}</h4>
+          <div class="download-row" aria-label="Download ${name}">${buttons}</div>
+        </div>
+      </article>`;
+    }
+
+    function renderSharedIcons() {
+      const query = iconSearch.value.trim().toLowerCase();
+      const selectedCategory = iconCategoryFilter.value;
+      const filteredIcons = sharedIconAssets.filter(([name, files]) => {
+        const category = getSharedIconCategory(name);
+        const haystack = [name, category, ...files.map(([, src]) => src)].join(" ").toLowerCase();
+        return (selectedCategory === "all" || category === selectedCategory) && (!query || haystack.includes(query));
+      });
+
+      if (!filteredIcons.length) {
+        sharedIconGrid.innerHTML = `<div class="note">No shared icons found.</div>`;
+        return;
+      }
+
+      const groupedIcons = filteredIcons.reduce((groups, icon) => {
+        const [name] = icon;
+        const category = getSharedIconCategory(name);
+        if (!groups.has(category)) groups.set(category, []);
+        groups.get(category).push(icon);
+        return groups;
+      }, new Map());
+
+      sharedIconGrid.innerHTML = sharedIconCategoryOrder
+        .filter(category => groupedIcons.has(category))
+        .map((category, index) => {
+          const icons = groupedIcons.get(category);
+          const shouldOpen = query || selectedCategory !== "all" || index === 0;
+          return `<details class="asset-category" id="icon-cat-${slugify(category)}" ${shouldOpen ? "open" : ""}>
+            <summary class="asset-category-head">
+              <div class="asset-category-title"><h4>${category}</h4></div>
+              <span class="asset-category-meta">${icons.length} icons</span>
+            </summary>
+            <div class="asset-category-grid">
+              ${icons.map(([name, files]) => renderSharedIconCard(name, files)).join("")}
+            </div>
+          </details>`;
+        }).join("");
+    }
+
+    function renderEffects() {
+      effectGrid.innerHTML = effectStyles.map(([name, type, value, usage]) => {
+        const sample = type === "Blur"
+          ? `<div class="effect-sample effect-blur" style="--blur-radius:${value}"></div>`
+          : `<div class="effect-sample" style="--effect-shadow:${value}">${name.replace("shadow-", "")}</div>`;
+        return `<article class="effect-card" id="effect-${slugify(name)}">
+          ${sample}
+          <h4>${name}</h4>
+          <p>${usage}</p>
+        </article>`;
+      }).join("");
+    }
+
+    async function downloadAsset(link) {
+      const href = link.getAttribute("href");
+      const filename = link.getAttribute("download") || href.split("/").pop();
+      try {
+        const response = await fetch(href);
+        if (!response.ok) throw new Error("Download response failed");
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const temp = document.createElement("a");
+        temp.href = url;
+        temp.download = filename;
+        document.body.appendChild(temp);
+        temp.click();
+        temp.remove();
+        URL.revokeObjectURL(url);
+      } catch (error) {
+        window.open(href, "_blank", "noopener");
+      }
+    }
+
+    function cssSeed() {
+      return Object.entries(families).map(([family, values]) =>
+        values.map((hex, index) => `--rp-color-${family.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${scales[index]}: ${hex};`).join("\\n")
+      ).join("\\n");
+    }
+
+    Object.keys(families).forEach(name => {
+      const option = document.createElement("option");
+      option.value = name;
+      option.textContent = name;
+      familyFilter.appendChild(option);
+    });
+
+    sharedIconCategoryOrder.forEach(name => {
+      const option = document.createElement("option");
+      option.value = name;
+      option.textContent = name;
+      iconCategoryFilter.appendChild(option);
+    });
+
+    document.getElementById("copyCss").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(`:root {\\n${cssSeed().split("\\n").map(line => `  ${line}`).join("\\n")}\\n}`);
+        document.getElementById("copyCss").textContent = "Copied";
+        setTimeout(() => document.getElementById("copyCss").textContent = "Copy CSS seed", 1400);
+      } catch (error) {
+        document.getElementById("copyCss").textContent = "Copy failed";
+      }
+    });
+
+    logoGrid.addEventListener("click", event => {
+      const link = event.target.closest(".download-link");
+      if (!link) return;
+      event.preventDefault();
+      downloadAsset(link);
+    });
+
+    sharedIconGrid.addEventListener("click", event => {
+      const link = event.target.closest(".download-link");
+      if (!link) return;
+      event.preventDefault();
+      downloadAsset(link);
+    });
+
+    document.addEventListener("click", async event => {
+      const button = event.target.closest(".copy-snippet");
+      if (!button) return;
+      const target = document.getElementById(button.dataset.copyTarget);
+      if (!target) return;
+      const original = button.textContent;
+      try {
+        await navigator.clipboard.writeText(target.textContent.trim());
+        button.textContent = "Copied";
+        setTimeout(() => button.textContent = original, 1200);
+      } catch (error) {
+        button.textContent = "Copy failed";
+        setTimeout(() => button.textContent = original, 1200);
+      }
+    });
+
+    palettes.addEventListener("click", async event => {
+      const swatch = event.target.closest(".swatch");
+      if (!swatch) return;
+      const hex = swatch.dataset.hex;
+      const label = swatch.querySelector("small");
+      try {
+        await navigator.clipboard.writeText(hex);
+        label.textContent = "Copied";
+        setTimeout(() => label.textContent = hex, 1000);
+      } catch (error) {
+        label.textContent = "Copy failed";
+        setTimeout(() => label.textContent = hex, 1200);
+      }
+    });
+
+    familyFilter.addEventListener("change", renderPalettes);
+    search.addEventListener("input", renderPalettes);
+    typeFilter.addEventListener("change", renderTypography);
+    iconSearch.addEventListener("input", renderSharedIcons);
+    iconCategoryFilter.addEventListener("change", renderSharedIcons);
+    clearIconSearch.addEventListener("click", () => {
+      iconSearch.value = "";
+      iconCategoryFilter.value = "all";
+      renderSharedIcons();
+      iconSearch.focus();
+    });
+    function applyTheme(hex) {
+      const value = hex.toUpperCase();
+      document.documentElement.style.setProperty("--brand", value);
+      document.getElementById("themeHex").textContent = value;
+      document.getElementById("themeColor").value = value;
+      document.querySelectorAll(".theme-swatch").forEach(swatch => {
+        swatch.setAttribute("aria-pressed", swatch.dataset.theme.toUpperCase() === value ? "true" : "false");
+      });
+    }
+
+    document.querySelector(".theme-row").addEventListener("click", event => {
+      const swatch = event.target.closest(".theme-swatch");
+      if (!swatch) return;
+      applyTheme(swatch.dataset.theme);
+    });
+
+    document.getElementById("themeColor").addEventListener("input", event => {
+      applyTheme(event.target.value);
+    });
+
+    document.querySelector(".usage-scene").addEventListener("click", event => {
+      const rangeButton = event.target.closest(".range-row button");
+      if (rangeButton) {
+        rangeButton.parentElement.querySelectorAll("button").forEach(item => {
+          item.setAttribute("aria-pressed", item === rangeButton ? "true" : "false");
+        });
+      }
+    });
+
+    const sceneMain = document.getElementById("sceneMain");
+    const dashboardMarkup = sceneMain.innerHTML;
+    const componentsMarkup = `
+          <div class="scene-kicker">Components</div>
+          <div class="button-row">
+            <button class="rp-button" type="button">Primary Button</button>
+            <button class="rp-button" data-style="default" type="button">Default Button</button>
+            <button class="rp-button" data-style="ghost" type="button">Text Button</button>
+            <button class="rp-button" data-style="link" type="button">Link Button</button>
+          </div>
+          <label style="display:block;margin-top:14px">
+            <span class="scene-kicker" style="display:block;margin-bottom:6px">Select campaign</span>
+            <select aria-label="Campaign">
+              <option>Summer campaign</option>
+              <option>Welcome series</option>
+              <option>Retention</option>
+            </select>
+          </label>
+          <div class="tag-row" style="margin-top:14px">
+            <span class="rp-tag" data-tone="brand">Primary</span>
+            <span class="rp-tag" data-tone="success">Published</span>
+            <span class="rp-tag" data-tone="warning">Needs review</span>
+          </div>`;
+
+    document.getElementById("viewComponents").addEventListener("click", () => {
+      document.getElementById("viewComponents").setAttribute("aria-pressed", "true");
+      document.getElementById("viewDashboard").setAttribute("aria-pressed", "false");
+      sceneMain.innerHTML = componentsMarkup;
+    });
+
+    document.getElementById("viewDashboard").addEventListener("click", () => {
+      document.getElementById("viewComponents").setAttribute("aria-pressed", "false");
+      document.getElementById("viewDashboard").setAttribute("aria-pressed", "true");
+      sceneMain.innerHTML = dashboardMarkup;
+    });
+
+    renderPalettes();
+    renderSemantics();
+    renderTypography();
+    renderLogos();
+    renderSharedIcons();
+    renderEffects();
+
+    pageNav.addEventListener("click", event => {
+      const link = event.target.closest("a");
+      if (!link) return;
+      event.preventDefault();
+      showPage(link.dataset.page, link.dataset.target || null);
+    });
+    subNav.addEventListener("click", event => {
+      const link = event.target.closest("a");
+      if (!link) return;
+      event.preventDefault();
+      showPage(link.dataset.page, link.dataset.target || null);
+    });
+    window.addEventListener("hashchange", applyHash);
+    applyHash();
+
+    const shell = document.querySelector(".shell");
+    const navCollapse = document.getElementById("navCollapse");
+    function setNavCollapsed(collapsed) {
+      shell.classList.toggle("is-nav-collapsed", collapsed);
+      navCollapse.setAttribute("aria-label", collapsed ? "Expand sidebar" : "Collapse sidebar");
+      navCollapse.title = collapsed ? "Expand sidebar" : "Collapse sidebar";
+      localStorage.setItem("rp-nav-collapsed", collapsed ? "1" : "0");
+    }
+    navCollapse.addEventListener("click", () => {
+      setNavCollapsed(!shell.classList.contains("is-nav-collapsed"));
+    });
+    setNavCollapsed(localStorage.getItem("rp-nav-collapsed") === "1");
+  </script>
+</body>
+</html>
